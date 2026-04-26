@@ -2859,7 +2859,8 @@ select.form-control {
     /* Mobile Header Background Icons */
     .floating-icon {
         font-size: 1.5rem !important;
-        opacity: 0.2; /* Slightly less opaque on mobile to not clash with logo */
+        opacity: 0.5 !important; /* Increased for better visibility */
+        display: block !important;
     }
     .icon-chem { top: 15%; left: 5%; font-size: 1.8rem !important; }
     .icon-math { top: 60%; left: 10%; font-size: 1.5rem !important; }
@@ -2867,4 +2868,9 @@ select.form-control {
     .icon-sci { top: 65%; left: 80%; font-size: 1.4rem !important; }
     .icon-geom { top: 45%; left: 50%; font-size: 1.8rem !important; }
     .icon-atom { top: 30%; left: 30%; font-size: 1.6rem !important; }
+
+    #toppers .section-title {
+        color: #FFD700 !important; /* Force gold color */
+        -webkit-text-fill-color: #FFD700 !important;
+    }
 }
