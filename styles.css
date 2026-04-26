@@ -400,18 +400,18 @@ ul {
 .floating-icon {
     position: absolute;
     color: var(--cobalt-blue);
-    opacity: 0.4;
+    opacity: 0.7; /* Increased opacity for less transparency */
     font-size: 2.5rem;
     animation: float-icon 10s ease-in-out infinite alternate;
-    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.15));
 }
 
-.icon-chem { top: 10%; left: 5%; font-size: 3rem; color: var(--cobalt-blue); animation-delay: 0s; }
-.icon-math { top: 50%; left: 25%; font-size: 2.5rem; color: var(--electric-blue); animation-delay: 1.5s; }
-.icon-phy { top: 15%; left: 45%; font-size: 3.5rem; color: var(--amber); opacity: 0.6; animation-delay: 0.5s; }
-.icon-sci { top: 60%; right: 20%; font-size: 2.2rem; color: var(--cobalt-blue); animation-delay: 2.5s; }
-.icon-geom { top: 20%; right: 5%; font-size: 3.2rem; color: var(--electric-blue); animation-delay: 3s; }
-.icon-atom { top: 40%; left: 60%; font-size: 2.8rem; color: var(--amber); opacity: 0.6; animation-delay: 1s; }
+.icon-chem { top: 10%; left: 5%; font-size: 3.2rem; color: var(--cobalt-blue); animation-delay: 0s; }
+.icon-math { top: 50%; left: 25%; font-size: 2.8rem; color: var(--electric-blue); animation-delay: 1.5s; }
+.icon-phy { top: 15%; left: 45%; font-size: 3.8rem; color: var(--amber); opacity: 0.8; animation-delay: 0.5s; }
+.icon-sci { top: 60%; right: 20%; font-size: 2.5rem; color: var(--cobalt-blue); animation-delay: 2.5s; }
+.icon-geom { top: 20%; right: 5%; font-size: 3.5rem; color: var(--electric-blue); animation-delay: 3s; }
+.icon-atom { top: 40%; left: 60%; font-size: 3rem; color: var(--amber); opacity: 0.8; animation-delay: 1s; }
 
 @keyframes float-icon {
     0% { transform: translateY(0) rotate(0deg); }
@@ -434,6 +434,7 @@ ul {
     /* Increased max-width for horizontal logos */
     object-fit: contain;
     transition: var(--transition-fast);
+    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.15)); /* Makes logo look bold and stand out */
 }
 
 .logo:hover {
@@ -2859,8 +2860,9 @@ select.form-control {
     /* Mobile Header Background Icons */
     .floating-icon {
         font-size: 1.5rem !important;
-        opacity: 0.5 !important; /* Increased for better visibility */
+        opacity: 0.75 !important; /* Higher opacity for mobile */
         display: block !important;
+        filter: drop-shadow(0 2px 5px rgba(0,0,0,0.2)) !important;
     }
     .icon-chem { top: 15%; left: 5%; font-size: 1.8rem !important; }
     .icon-math { top: 60%; left: 10%; font-size: 1.5rem !important; }
@@ -2868,6 +2870,10 @@ select.form-control {
     .icon-sci { top: 65%; left: 80%; font-size: 1.4rem !important; }
     .icon-geom { top: 45%; left: 50%; font-size: 1.8rem !important; }
     .icon-atom { top: 30%; left: 30%; font-size: 1.6rem !important; }
+
+    .logo img {
+        filter: drop-shadow(0 4px 12px rgba(0,0,0,0.2)) !important; /* Extra bold shadow for mobile */
+    }
 
     #toppers .section-title {
         color: #FFD700 !important; /* Force gold color */
