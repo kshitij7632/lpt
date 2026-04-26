@@ -2830,13 +2830,12 @@ select.form-control {
     background: var(--bright-yellow);
     transform: translateX(8px);
 }
-
 #toppers .section-title {
-    background: none;
-    -webkit-background-clip: initial;
-    background-clip: initial;
-    -webkit-text-fill-color: var(--bright-yellow);
-    color: var(--bright-yellow);
+    background: none !important;
+    -webkit-background-clip: border-box !important;
+    background-clip: border-box !important;
+    -webkit-text-fill-color: var(--bright-yellow) !important;
+    color: var(--bright-yellow) !important;
 }
 
 #toppers .section-subtitle {
