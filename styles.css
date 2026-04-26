@@ -2833,6 +2833,8 @@ select.form-control {
 
 #toppers .section-title {
     background: none;
+    -webkit-background-clip: initial;
+    background-clip: initial;
     -webkit-text-fill-color: var(--bright-yellow);
     color: var(--bright-yellow);
 }
@@ -2854,4 +2856,16 @@ select.form-control {
     .download-box {
         padding: 24px;
     }
+    
+    /* Mobile Header Background Icons */
+    .floating-icon {
+        font-size: 1.5rem !important;
+        opacity: 0.2; /* Slightly less opaque on mobile to not clash with logo */
+    }
+    .icon-chem { top: 15%; left: 5%; font-size: 1.8rem !important; }
+    .icon-math { top: 60%; left: 10%; font-size: 1.5rem !important; }
+    .icon-phy { top: 20%; left: 85%; font-size: 2rem !important; }
+    .icon-sci { top: 65%; left: 80%; font-size: 1.4rem !important; }
+    .icon-geom { top: 45%; left: 50%; font-size: 1.8rem !important; }
+    .icon-atom { top: 30%; left: 30%; font-size: 1.6rem !important; }
 }
