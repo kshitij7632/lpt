@@ -1,0 +1,25 @@
+﻿{
+    "faq":  [
+
+            ],
+    "testimonials":  [
+
+                     ],
+    "branches":  [
+                     {
+                         "name":  "Mulund West",
+                         "phone":  "9136655448"
+                     },
+                     {
+                         "name":  "Dombivli East",
+                         "phone":  "9167788777"
+                     }
+                 ],
+    "courses":  [
+                    "JEE",
+                    "NEET",
+                    "MHT-CET",
+                    "Class 8-12 Science",
+                    "Commerce"
+                ]
+}
