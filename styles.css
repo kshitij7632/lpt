@@ -2318,7 +2318,7 @@ select.form-control {
     height: 220px;
     position: relative;
     overflow: hidden;
-    background: linear-gradient(135deg, var(--cobalt-blue), var(--electric-blue));
+    background: var(--pure-white);
 }
 
 .podium-gold .podium-photo {
