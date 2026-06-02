@@ -1,4 +1,4 @@
-﻿
+
 // Mobile Navigation Toggle
 const navToggle = document.querySelector('.nav-toggle');
 const navClose = document.querySelector('.nav-close');
@@ -127,7 +127,8 @@ window.addEventListener('scroll', animateCounters);
 // Form Submission Handler - Google Sheets Integration
 const contactForm = document.querySelector('.contact-form form');
 
-contactForm.addEventListener('submit', async (e) => {
+if (contactForm) {
+    contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     const submitBtn = contactForm.querySelector('button[type="submit"]');
@@ -160,19 +161,20 @@ contactForm.addEventListener('submit', async (e) => {
         });
 
         // Show success message
-        alert('âœ… Thank you for your interest! We have received your enrollment request and will contact you within 24 hours.');
+        alert('✅ Thank you for your interest! We have received your enrollment request and will contact you within 24 hours.');
         contactForm.reset();
 
     } catch (error) {
         console.error('Error:', error);
         // Even if there's an error, the data might have been submitted
-        alert('âœ… Form submitted! We will contact you soon. For immediate assistance, call: +91 98765 43210');
+        alert('✅ Form submitted! We will contact you soon. For immediate assistance, call: +91 98765 43210');
         contactForm.reset();
     } finally {
         submitBtn.textContent = originalText;
         submitBtn.disabled = false;
     }
-});
+    });
+}
 
 //ADD hover effect to course cards
 const courseCards = document.querySelectorAll('.course-card');
@@ -225,7 +227,7 @@ if ('ontouchstart' in window) {
             this.style.borderColor = 'var(--bright-yellow)';
         });
 
-        card.addEventListener('touchend', function () {
+        item.addEventListener('touchend', function () {
             setTimeout(() => {
                 this.style.transform = '';
                 this.style.borderColor = '';

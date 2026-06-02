@@ -1,0 +1,1105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Online Admission Portal | Lakshya Private Tuitions | Mulund & Dombivli</title>
+    <meta name="description" content="Apply online for admission at Lakshya Private Tuitions. Fast, secure, and modern digital admission portal for JEE, NEET, MHT-CET, and school/college coaching.">
+    
+    <link rel="canonical" href="https://lakshyaprivatetuition.com/admission.html">
+    <meta name="robots" content="index, follow">
+    <link rel="icon" href="logo.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Ionicons -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <!-- Main Stylesheet & Admission Custom Stylesheet -->
+    <link rel="stylesheet" href="styles.css?v=1.2">
+    <link rel="stylesheet" href="admission.css?v=5.0">
+
+    <!-- Portal Header Styles -->
+    <style>
+        /* ===== PREMIUM ORANGE PORTAL HEADER ===== */
+        .portal-header {
+            background: linear-gradient(135deg, #FF6B00 0%, #FF5500 100%) !important;
+            border-bottom: none !important;
+            box-shadow: 0 4px 24px rgba(200, 80, 0, 0.3) !important;
+            position: sticky !important;
+            top: 0 !important;
+            z-index: 1000 !important;
+            padding: 0 !important;
+        }
+
+        .portal-header-inner {
+            display: flex !important;
+            justify-content: space-between !important;
+            align-items: center !important;
+            height: 96px !important;
+            padding: 0 8px !important;
+        }
+
+        /* ---- LEFT: Brand Partnership Group ---- */
+        .portal-branding {
+            display: flex !important;
+            align-items: center !important;
+            gap: 28px !important;
+        }
+
+        /* LPT Header Logo — displayed directly on orange header, no box */
+        .lpt-header-logo {
+            flex-shrink: 0 !important;
+            display: inline-flex !important;
+            align-items: center !important;
+        }
+
+        .lpt-header-logo img {
+            height: 93px !important;
+            width: auto !important;
+            object-fit: contain !important;
+            display: block !important;
+            /* Premium look: subtle white glow + drop shadow */
+            filter: drop-shadow(0 2px 8px rgba(255, 255, 255, 0.3))
+                    drop-shadow(0 4px 12px rgba(0, 0, 0, 0.15)) !important;
+        }
+
+        /* Vertical Divider */
+        .brand-divider {
+            width: 2px !important;
+            height: 64px !important;
+            background: rgba(255, 255, 255, 0.35) !important;
+            flex-shrink: 0 !important;
+            border-radius: 2px !important;
+            margin: 0 8px !important; /* Increased spacing */
+        }
+
+        /* Powered By Block — no gap, text sits flush above Vedantu logo */
+        .powered-by-block {
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important; /* Center-align both text and logo */
+            justify-content: center !important;
+            gap: 0 !important;
+        }
+
+        .powered-by-text {
+            font-family: 'Inter', 'Poppins', sans-serif !important;
+            font-size: 0.75rem !important;
+            font-weight: 800 !important;
+            color: rgba(255, 255, 255, 0.95) !important;
+            letter-spacing: 4px !important;
+            text-transform: uppercase !important;
+            line-height: 1 !important;
+            margin-bottom: -15px !important; /* Slight pull toward logo */
+        }
+
+        /* Vedantu logo — aligned with POWERED BY text */
+        .vedantu-pill {
+            display: inline-flex !important;
+            background: transparent !important;
+            padding: 0 !important;
+            margin: 0 !important;
+            box-shadow: none !important;
+            border-radius: 0 !important;
+        }
+
+        .vedantu-logo-img {
+            height: 85px !important; /* Big Vedantu logo */
+            width: auto !important;
+            object-fit: contain !important;
+            display: block !important;
+            filter: none !important;
+            mix-blend-mode: normal !important; 
+            margin-bottom: -15px;
+        }
+
+        /* ---- RIGHT: Back to Home Button ---- */
+        .back-home-btn {
+            display: inline-flex !important;
+            align-items: center !important;
+            gap: 8px !important;
+            font-family: 'Inter', 'Poppins', sans-serif !important;
+            font-size: 0.9rem !important;
+            font-weight: 600 !important;
+            color: #ffffff !important;
+            text-decoration: none !important;
+            padding: 11px 24px !important;
+            border-radius: 10px !important;
+            background: rgba(255, 255, 255, 0.12) !important;
+            border: 2px solid rgba(255, 255, 255, 0.5) !important;
+            transition: all 0.25s ease !important;
+            white-space: nowrap !important;
+            flex-shrink: 0 !important;
+            margin-right: 4px !important;
+        }
+
+        .back-home-btn ion-icon {
+            font-size: 1.15rem !important;
+            transition: transform 0.2s ease !important;
+            color: #ffffff !important;
+        }
+
+        .back-home-btn:hover {
+            background: rgba(255, 255, 255, 0.22) !important;
+            border-color: #ffffff !important;
+        }
+
+        .back-home-btn:hover ion-icon {
+            transform: translateX(-4px) !important;
+        }
+
+        /* ---- TABLET (≤1024px) ---- */
+        @media (max-width: 1024px) {
+            .lpt-header-logo img { height: 62px !important; }
+            .vedantu-logo-img { height: 70px !important; }
+        }
+
+        /* ---- TABLET (≤768px) ---- */
+        @media (max-width: 768px) {
+            .portal-header-inner {
+                height: 96px !important;
+                padding: 0 4px !important;
+            }
+            .portal-branding { gap: 16px !important; }
+            .lpt-header-logo img { height: 52px !important; }
+            .brand-divider { height: 50px !important; margin: 0 4px !important; }
+            .powered-by-text { font-size: 0.6rem !important; letter-spacing: 3px !important; }
+            .vedantu-logo-img { height: 56px !important; }
+            .back-home-btn { padding: 10px 16px !important; font-size: 0.85rem !important; }
+        }
+
+        /* ---- MOBILE (≤480px) ---- */
+        @media (max-width: 480px) {
+            .portal-header-inner {
+                height: 84px !important;
+                padding: 0 2px !important;
+            }
+            .portal-branding { gap: 8px !important; }
+            .lpt-header-logo img { height: 40px !important; }
+            .brand-divider { height: 40px !important; margin: 0 2px !important; }
+            .powered-by-text { font-size: 0.5rem !important; letter-spacing: 2px !important; }
+            .vedantu-logo-img { height: 42px !important; }
+            .back-home-btn span { display: none !important; }
+            .back-home-btn { padding: 10px 12px !important; gap: 0 !important; margin-right: 0 !important; }
+        }
+    </style>
+</head>
+
+<body id="top" class="admission-portal-page">
+
+    <!-- PREMIUM PORTAL HEADER -->
+    <header class="portal-header">
+        <div class="container">
+            <div class="portal-header-inner">
+
+                <!-- LEFT: Brand Partnership -->
+                <div class="portal-branding">
+                    <div class="lpt-header-logo">
+                        <img src="lpt_header.png" alt="Lakshya Private Tuitions">
+                    </div>
+
+                    <div class="brand-divider"></div>
+
+                    <div class="powered-by-block">
+                        <span class="powered-by-text">POWERED BY</span>
+                        <div class="vedantu-pill">
+                            <img src="vedantu_white.png" alt="Vedantu" class="vedantu-logo-img">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RIGHT: Back to Home -->
+                <a href="index.html" class="back-home-btn">
+                    <ion-icon name="arrow-back-outline"></ion-icon>
+                    <span>Back to Home</span>
+                </a>
+
+            </div>
+        </div>
+    </header>
+
+    <!-- ADMISSION MAIN CONTAINER -->
+    <main class="admission-main-container">
+        <!-- Floating Subject Icons in Background for consistency -->
+        <div class="header-bg-icons">
+            <ion-icon name="flask-outline" class="floating-icon icon-chem"></ion-icon>
+            <ion-icon name="calculator-outline" class="floating-icon icon-math"></ion-icon>
+            <ion-icon name="planet-outline" class="floating-icon icon-phy"></ion-icon>
+            <ion-icon name="telescope-outline" class="floating-icon icon-sci"></ion-icon>
+            <ion-icon name="compass-outline" class="floating-icon icon-geom"></ion-icon>
+            <ion-icon name="hardware-chip-outline" class="floating-icon icon-atom"></ion-icon>
+        </div>
+
+        <div class="container admission-form-container">
+            <!-- STICKY PROGRESS HEADER FOR MOBILE & DESKTOP DESIGNS -->
+            <div class="progress-bar-wrapper">
+                <div class="progress-info">
+                    <span class="progress-title">Admission Form Progress</span>
+                    <span class="progress-percentage-label" id="progress-percentage">0%</span>
+                </div>
+                <div class="progress-bar-container">
+                    <div class="progress-bar-fill" id="progress-fill"></div>
+                </div>
+            </div>
+
+            <div class="admission-layout-grid">
+                <!-- LEFT SIDEBAR: STEP NAVIGATION (Desktop & Sticky Sidebar) -->
+                <aside class="admission-sidebar">
+                    <div class="sidebar-sticky-card">
+                        <h3 class="sidebar-title">Admission Steps</h3>
+                        <ul class="steps-list" id="steps-indicator-list">
+                            <li class="step-item active" data-step="1">
+                                <span class="step-number">1</span>
+                                <span class="step-label">Student Info</span>
+                            </li>
+                            <li class="step-item" data-step="2">
+                                <span class="step-number">2</span>
+                                <span class="step-label">Parents Details</span>
+                            </li>
+                            <li class="step-item" data-step="3">
+                                <span class="step-number">3</span>
+                                <span class="step-label">Address Details</span>
+                            </li>
+                            <li class="step-item" data-step="4">
+                                <span class="step-number">4</span>
+                                <span class="step-label">Course Selection</span>
+                            </li>
+                            <li class="step-item" data-step="5">
+                                <span class="step-number">5</span>
+                                <span class="step-label">Education Details</span>
+                            </li>
+                            <li class="step-item" data-step="6">
+                                <span class="step-number">6</span>
+                                <span class="step-label">Upload Documents</span>
+                            </li>
+                            <li class="step-item" data-step="7">
+                                <span class="step-number">7</span>
+                                <span class="step-label">Terms & Consent</span>
+                            </li>
+                            <li class="step-item" data-step="8">
+                                <span class="step-number">8</span>
+                                <span class="step-label">Final Submission</span>
+                            </li>
+                        </ul>
+                    </div>
+                </aside>
+
+                <!-- RIGHT CONTENT AREA: STEP CONTENT CARDS -->
+                <section class="admission-form-card">
+                    <form id="admissionForm" class="admission-form" novalidate autocomplete="on">
+                        
+                        <!-- STEP 1: STUDENT INFORMATION -->
+                        <div class="form-step-panel active" id="step-1-panel">
+                            <div class="panel-header">
+                                <h2>Section 1: Student Information</h2>
+                                <p>Provide details of the student seeking admission</p>
+                            </div>
+                            <div class="form-fields-grid">
+                                <div class="form-group required">
+                                    <label for="firstName">First Name</label>
+                                    <input type="text" id="firstName" name="firstName" placeholder="e.g., Kshitij" required class="form-input">
+                                    <span class="error-msg">First name is required.</span>
+                                </div>
+                                <div class="form-group required">
+                                    <label for="lastName">Last Name</label>
+                                    <input type="text" id="lastName" name="lastName" placeholder="e.g., Sharma" required class="form-input">
+                                    <span class="error-msg">Last name is required.</span>
+                                </div>
+                                <div class="form-group required">
+                                    <label for="dob">Date of Birth</label>
+                                    <input type="date" id="dob" name="dob" required class="form-input">
+                                    <span class="error-msg">Date of birth is required.</span>
+                                </div>
+                                <div class="form-group required">
+                                    <label for="gender">Gender</label>
+                                    <select id="gender" name="gender" required class="form-input select-input">
+                                        <option value="" disabled selected>Select Gender</option>
+                                        <option value="Male">Male</option>
+                                        <option value="Female">Female</option>
+                                        <option value="Other">Other</option>
+                                    </select>
+                                    <span class="error-msg">Please select gender.</span>
+                                </div>
+                                <div class="form-group required">
+                                    <label for="bloodGroup">Blood Group</label>
+                                    <select id="bloodGroup" name="bloodGroup" required class="form-input select-input">
+                                        <option value="" disabled selected>Select Blood Group</option>
+                                        <option value="A+">A+</option>
+                                        <option value="A-">A-</option>
+                                        <option value="B+">B+</option>
+                                        <option value="B-">B-</option>
+                                        <option value="O+">O+</option>
+                                        <option value="O-">O-</option>
+                                        <option value="AB+">AB+</option>
+                                        <option value="AB-">AB-</option>
+                                    </select>
+                                    <span class="error-msg">Please select blood group.</span>
+                                </div>
+                                <div class="form-group required">
+                                    <label for="studentMobile">Student Mobile Number</label>
+                                    <input type="tel" id="studentMobile" name="studentMobile" placeholder="e.g., 9876543210" pattern="[0-9]{10}" maxlength="10" required class="form-input">
+                                    <span class="error-msg">Enter a valid 10-digit mobile number.</span>
+                                </div>
+                                <div class="form-group required">
+                                    <label for="studentEmail">Student Email Address</label>
+                                    <input type="email" id="studentEmail" name="studentEmail" placeholder="e.g., student@gmail.com" required class="form-input">
+                                    <span class="error-msg">Enter a valid email address.</span>
+                                </div>
+                                <div class="form-group required">
+                                    <label for="aadhaarNo">Aadhaar Number</label>
+                                    <input type="text" id="aadhaarNo" name="aadhaarNo" placeholder="e.g., 123456789012" pattern="[0-9]{12}" maxlength="12" required class="form-input">
+                                    <span class="error-msg">Enter a valid 12-digit Aadhaar number.</span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="instagramId">Instagram ID <span class="optional-label">(Optional)</span></label>
+                                    <input type="text" id="instagramId" name="instagramId" placeholder="e.g., @insta_handle" class="form-input">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- STEP 2: PARENT / GUARDIAN DETAILS -->
+                        <div class="form-step-panel" id="step-2-panel">
+                            <div class="panel-header">
+                                <h2>Section 2: Parent / Guardian Details</h2>
+                                <p>Provide details of the parent or local guardian</p>
+                            </div>
+                            <div class="form-fields-grid">
+                                <div class="form-group required">
+                                    <label for="fatherName">Father’s Name</label>
+                                    <input type="text" id="fatherName" name="fatherName" placeholder="Father's full name" required class="form-input">
+                                    <span class="error-msg">Father's name is required.</span>
+                                </div>
+                                <div class="form-group required">
+                                    <label for="motherName">Mother’s Name</label>
+                                    <input type="text" id="motherName" name="motherName" placeholder="Mother's full name" required class="form-input">
+                                    <span class="error-msg">Mother's name is required.</span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="guardianName">Guardian’s Name <span class="optional-label">(Optional)</span></label>
+                                    <input type="text" id="guardianName" name="guardianName" placeholder="Guardian's name if applicable" class="form-input">
+                                </div>
+                                <div class="form-group required">
+                                    <label for="parentMobile">Parent Mobile Number</label>
+                                    <input type="tel" id="parentMobile" name="parentMobile" placeholder="e.g., 9876543210" pattern="[0-9]{10}" maxlength="10" required class="form-input">
+                                    <span class="error-msg">Enter a valid 10-digit mobile number.</span>
+                                </div>
+                                <div class="form-group required">
+                                    <label for="fatherOccupation">Occupation of Father</label>
+                                    <input type="text" id="fatherOccupation" name="fatherOccupation" placeholder="e.g., Businessman, Engineer" required class="form-input">
+                                    <span class="error-msg">Father's occupation is required.</span>
+                                </div>
+                                <div class="form-group required">
+                                    <label for="motherOccupation">Occupation of Mother</label>
+                                    <input type="text" id="motherOccupation" name="motherOccupation" placeholder="e.g., Homemaker, Teacher" required class="form-input">
+                                    <span class="error-msg">Mother's occupation is required.</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- STEP 3: ADDRESS DETAILS -->
+                        <div class="form-step-panel" id="step-3-panel">
+                            <div class="panel-header">
+                                <h2>Section 3: Address Details</h2>
+                                <p>Provide physical address information for communications</p>
+                            </div>
+                            
+                            <div class="form-group required">
+                                <label for="permanentAddress">Permanent Address</label>
+                                <textarea id="permanentAddress" name="permanentAddress" rows="3" placeholder="Enter complete permanent address" required class="form-input textarea-input"></textarea>
+                                <span class="error-msg">Permanent address is required.</span>
+                            </div>
+
+                            <!-- Modern Checkbox Toggle to copy address -->
+                            <div class="form-group checkbox-toggle-group">
+                                <label class="custom-toggle">
+                                    <input type="checkbox" id="sameAddressToggle" class="toggle-checkbox">
+                                    <span class="toggle-track">
+                                        <span class="toggle-thumb"></span>
+                                    </span>
+                                    <span class="toggle-label">Correspondence Address is same as Permanent Address</span>
+                                </label>
+                            </div>
+
+                            <div class="form-group required">
+                                <label for="correspondenceAddress">Correspondence Address</label>
+                                <textarea id="correspondenceAddress" name="correspondenceAddress" rows="3" placeholder="Enter correspondence address" required class="form-input textarea-input"></textarea>
+                                <span class="error-msg">Correspondence address is required.</span>
+                            </div>
+
+                            <div class="form-fields-grid thirds-grid">
+                                <div class="form-group required">
+                                    <label for="state">State</label>
+                                    <select id="state" name="state" required class="form-input select-input">
+                                        <option value="" disabled>Select State</option>
+                                        <option value="Maharashtra" selected>Maharashtra</option>
+                                        <option value="Goa">Goa</option>
+                                        <option value="Gujarat">Gujarat</option>
+                                        <option value="Karnataka">Karnataka</option>
+                                        <option value="Other">Other</option>
+                                    </select>
+                                    <span class="error-msg">State is required.</span>
+                                </div>
+                                <div class="form-group required">
+                                    <label for="city">City</label>
+                                    <input type="text" id="city" name="city" placeholder="e.g., Mulund, Dombivli" required class="form-input">
+                                    <span class="error-msg">City is required.</span>
+                                </div>
+                                <div class="form-group required">
+                                    <label for="pinCode">PIN Code</label>
+                                    <input type="text" id="pinCode" name="pinCode" placeholder="e.g., 400080" pattern="[0-9]{6}" maxlength="6" required class="form-input">
+                                    <span class="error-msg">Enter a valid 6-digit PIN code.</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- STEP 4: COURSE SELECTION -->
+                        <div class="form-step-panel" id="step-4-panel">
+                            <div class="panel-header">
+                                <h2>Section 4: Course Selection</h2>
+                                <p>Select your desired coaching courses and academy details</p>
+                            </div>
+
+                            <div class="course-selection-wrapper required-checkbox-group">
+                                <label class="field-section-label">Available Courses <span class="required-indicator">*</span></label>
+                                <span class="error-msg inline-error">Select at least one course.</span>
+                                
+                                <div class="courses-checkbox-grid">
+                                    <!-- Course Item: ABACUS -->
+                                    <label class="course-checkbox-card">
+                                        <input type="checkbox" name="courses" value="ABACUS" class="course-cb">
+                                        <div class="course-card-content">
+                                            <div class="course-cb-icon-box">
+                                                <ion-icon name="grid-outline"></ion-icon>
+                                            </div>
+                                            <div class="course-cb-text">
+                                                <span class="course-cb-title">ABACUS</span>
+                                                <span class="course-cb-desc">Mental Math Mastery</span>
+                                            </div>
+                                        </div>
+                                    </label>
+
+                                    <!-- Course Item: DIPLOMA -->
+                                    <label class="course-checkbox-card">
+                                        <input type="checkbox" name="courses" value="DIPLOMA" class="course-cb">
+                                        <div class="course-card-content">
+                                            <div class="course-cb-icon-box">
+                                                <ion-icon name="ribbon-outline"></ion-icon>
+                                            </div>
+                                            <div class="course-cb-text">
+                                                <span class="course-cb-title">DIPLOMA</span>
+                                                <span class="course-cb-desc">Polytechnic Engineering</span>
+                                            </div>
+                                        </div>
+                                    </label>
+
+                                    <!-- Course Item: SCHOOL -->
+                                    <label class="course-checkbox-card">
+                                        <input type="checkbox" name="courses" value="SCHOOL" class="course-cb">
+                                        <div class="course-card-content">
+                                            <div class="course-cb-icon-box">
+                                                <ion-icon name="school-outline"></ion-icon>
+                                            </div>
+                                            <div class="course-cb-text">
+                                                <span class="course-cb-title">SCHOOL</span>
+                                                <span class="course-cb-desc">Class 8th - 10th (State/ICSE)</span>
+                                            </div>
+                                        </div>
+                                    </label>
+
+                                    <!-- Course Item: SCIENCE -->
+                                    <label class="course-checkbox-card">
+                                        <input type="checkbox" name="courses" value="SCIENCE" class="course-cb">
+                                        <div class="course-card-content">
+                                            <div class="course-cb-icon-box">
+                                                <ion-icon name="flask-outline"></ion-icon>
+                                            </div>
+                                            <div class="course-cb-text">
+                                                <span class="course-cb-title">SCIENCE</span>
+                                                <span class="course-cb-desc">Class 11th - 12th Board</span>
+                                            </div>
+                                        </div>
+                                    </label>
+
+                                    <!-- Course Item: COMMERCE -->
+                                    <label class="course-checkbox-card">
+                                        <input type="checkbox" name="courses" value="COMMERCE" class="course-cb">
+                                        <div class="course-card-content">
+                                            <div class="course-cb-icon-box">
+                                                <ion-icon name="analytics-outline"></ion-icon>
+                                            </div>
+                                            <div class="course-cb-text">
+                                                <span class="course-cb-title">COMMERCE</span>
+                                                <span class="course-cb-desc">Class 11th - 12th Board</span>
+                                            </div>
+                                        </div>
+                                    </label>
+
+                                    <!-- Course Item: ARTS -->
+                                    <label class="course-checkbox-card">
+                                        <input type="checkbox" name="courses" value="ARTS" class="course-cb">
+                                        <div class="course-card-content">
+                                            <div class="course-cb-icon-box">
+                                                <ion-icon name="color-palette-outline"></ion-icon>
+                                            </div>
+                                            <div class="course-cb-text">
+                                                <span class="course-cb-title">ARTS</span>
+                                                <span class="course-cb-desc">Class 11th - 12th Board</span>
+                                            </div>
+                                        </div>
+                                    </label>
+
+                                    <!-- Course Item: ENGG -->
+                                    <label class="course-checkbox-card">
+                                        <input type="checkbox" name="courses" value="ENGG" class="course-cb">
+                                        <div class="course-card-content">
+                                            <div class="course-cb-icon-box">
+                                                <ion-icon name="cog-outline"></ion-icon>
+                                            </div>
+                                            <div class="course-cb-text">
+                                                <span class="course-cb-title">ENGG</span>
+                                                <span class="course-cb-desc">Degree Engineering</span>
+                                            </div>
+                                        </div>
+                                    </label>
+
+                                    <!-- Course Item: JEE -->
+                                    <label class="course-checkbox-card">
+                                        <input type="checkbox" name="courses" value="JEE" class="course-cb">
+                                        <div class="course-card-content">
+                                            <div class="course-cb-icon-box">
+                                                <ion-icon name="calculator-outline"></ion-icon>
+                                            </div>
+                                            <div class="course-cb-text">
+                                                <span class="course-cb-title">JEE</span>
+                                                <span class="course-cb-desc">IIT Entrance Preparation</span>
+                                            </div>
+                                        </div>
+                                    </label>
+
+                                    <!-- Course Item: NEET -->
+                                    <label class="course-checkbox-card">
+                                        <input type="checkbox" name="courses" value="NEET" class="course-cb">
+                                        <div class="course-card-content">
+                                            <div class="course-cb-icon-box">
+                                                <ion-icon name="pulse-outline"></ion-icon>
+                                            </div>
+                                            <div class="course-cb-text">
+                                                <span class="course-cb-title">NEET</span>
+                                                <span class="course-cb-desc">Medical Entrance Prep</span>
+                                            </div>
+                                        </div>
+                                    </label>
+
+                                    <!-- Course Item: MHT-CET -->
+                                    <label class="course-checkbox-card">
+                                        <input type="checkbox" name="courses" value="MHT-CET" class="course-cb">
+                                        <div class="course-card-content">
+                                            <div class="course-cb-icon-box">
+                                                <ion-icon name="medal-outline"></ion-icon>
+                                            </div>
+                                            <div class="course-cb-text">
+                                                <span class="course-cb-title">MHT-CET</span>
+                                                <span class="course-cb-desc">State Common Entrance</span>
+                                            </div>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="form-fields-grid">
+                                <div class="form-group required">
+                                    <label for="preferredTiming">Preferred Batch Timing</label>
+                                    <select id="preferredTiming" name="preferredTiming" required class="form-input select-input">
+                                        <option value="" disabled selected>Select Batch Timing</option>
+                                        <option value="Morning Batch (7:00 AM - 11:30 AM)">Morning Batch (7:00 AM - 11:30 AM)</option>
+                                        <option value="Afternoon Batch (12:00 PM - 4:00 PM)">Afternoon Batch (12:00 PM - 4:00 PM)</option>
+                                        <option value="Evening Batch (4:30 PM - 9:00 PM)">Evening Batch (4:30 PM - 9:00 PM)</option>
+                                        <option value="Weekend Batch (Full Day / Spec)">Weekend Batch (Full Day / Spec)</option>
+                                    </select>
+                                    <span class="error-msg">Please select a preferred timing.</span>
+                                </div>
+
+                                <div class="form-group required">
+                                    <label for="branch">Preferred Branch</label>
+                                    <select id="branch" name="branch" required class="form-input select-input">
+                                        <option value="" disabled selected>Select Branch</option>
+                                        <option value="Mulund West Branch (Keshav Bhavan)">Mulund West Branch (Keshav Bhavan)</option>
+                                        <option value="Dombivli East Branch (Navare Plaza)">Dombivli East Branch (Navare Plaza)</option>
+                                    </select>
+                                    <span class="error-msg">Please select a branch.</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- STEP 5: EDUCATIONAL DETAILS -->
+                        <div class="form-step-panel" id="step-5-panel">
+                            <div class="panel-header">
+                                <h2>Section 5: Educational Details</h2>
+                                <p>Enter your academic history and scholarship information</p>
+                            </div>
+                            <div class="form-fields-grid">
+                                <div class="form-group required">
+                                    <label for="schoolCollege">School/College Name</label>
+                                    <input type="text" id="schoolCollege" name="schoolCollege" placeholder="Enter school or college name" required class="form-input">
+                                    <span class="error-msg">School/College name is required.</span>
+                                </div>
+                                <div class="form-group required">
+                                    <label for="board">Exam Board</label>
+                                    <select id="board" name="board" required class="form-input select-input">
+                                        <option value="" disabled selected>Select Board</option>
+                                        <option value="SSC">State Board (SSC)</option>
+                                        <option value="HSC">State Board (HSC)</option>
+                                        <option value="CBSE">CBSE Board</option>
+                                        <option value="ICSE">ICSE / ISC Board</option>
+                                        <option value="IB">IB Board</option>
+                                        <option value="Other">Other Board</option>
+                                    </select>
+                                    <span class="error-msg">Please select board.</span>
+                                </div>
+                                <div class="form-group required">
+                                    <label for="previousPercentage">Previous Exam Percentage (%)</label>
+                                    <input type="number" id="previousPercentage" name="previousPercentage" placeholder="e.g., 85.50" step="0.01" min="0" max="100" required class="form-input">
+                                    <span class="error-msg">Enter a percentage between 0 and 100.</span>
+                                </div>
+                                <div class="form-group required">
+                                    <label for="scholarship">Scholarship Percentage</label>
+                                    <select id="scholarship" name="scholarship" required class="form-input select-input">
+                                        <option value="" disabled selected>Select Scholarship</option>
+                                        <option value="No Scholarship (0%)">No Scholarship (0%)</option>
+                                        <option value="5% Scholarship">5% Scholarship</option>
+                                        <option value="10% Scholarship">10% Scholarship</option>
+                                        <option value="15% Scholarship">15% Scholarship</option>
+                                        <option value="20% Scholarship">20% Scholarship</option>
+                                        <option value="25% Scholarship">25% Scholarship</option>
+                                        <option value="30% Scholarship">30% Scholarship</option>
+                                        <option value="35% Scholarship">35% Scholarship</option>
+                                        <option value="40% Scholarship">40% Scholarship</option>
+                                        <option value="Other / Merit Concession">Other / Merit Concession (Approval Pending)</option>
+                                    </select>
+                                    <span class="error-msg">Please select scholarship.</span>
+                                </div>
+                            </div>
+                            <div class="form-group required mt-20">
+                                <label for="subjects">Subjects Studied / Opted</label>
+                                <textarea id="subjects" name="subjects" rows="2" placeholder="e.g., Physics, Chemistry, Maths, English" required class="form-input textarea-input"></textarea>
+                                <span class="error-msg">Please specify key subjects.</span>
+                            </div>
+                        </div>
+
+                        <!-- STEP 6: UPLOAD DOCUMENTS -->
+                        <div class="form-step-panel" id="step-6-panel">
+                            <div class="panel-header">
+                                <h2>Section 6: Upload Documents</h2>
+                                <p>Upload high-quality images or PDFs of required student credentials</p>
+                            </div>
+                            
+                            <div class="upload-sections-wrapper">
+                                <!-- Upload 1: Student Photograph -->
+                                <div class="upload-box-group required">
+                                    <label class="field-section-label">Student Photograph <span class="required-indicator">*</span></label>
+                                    <p class="upload-guideline">Recent passport-size photo. (JPG, JPEG, or PNG, max 2MB)</p>
+                                    
+                                    <div class="custom-file-upload" id="photo-upload-zone">
+                                        <input type="file" id="studentPhoto" name="studentPhoto" accept="image/png, image/jpeg, image/jpg" required class="file-input-hidden">
+                                        <div class="upload-zone-content">
+                                            <ion-icon name="cloud-upload-outline" class="upload-icon"></ion-icon>
+                                            <span class="upload-zone-text">Drag and drop file here or <strong>browse</strong></span>
+                                        </div>
+                                    </div>
+                                    <div class="file-preview-card" id="photo-preview-card">
+                                        <div class="file-preview-details">
+                                            <ion-icon name="image-outline" class="file-icon"></ion-icon>
+                                            <div class="file-meta">
+                                                <span class="file-name" id="photo-file-name">filename.jpg</span>
+                                                <span class="file-size" id="photo-file-size">120 KB</span>
+                                            </div>
+                                        </div>
+                                        <button type="button" class="remove-file-btn" id="photo-remove-btn" aria-label="Remove photo">
+                                            <ion-icon name="close-circle"></ion-icon>
+                                        </button>
+                                    </div>
+                                    <span class="error-msg inline-error" id="photo-error">Please upload a valid student photograph.</span>
+                                </div>
+
+                                <!-- Upload 2: Aadhaar Card -->
+                                <div class="upload-box-group required">
+                                    <label class="field-section-label">Aadhaar Card Copy <span class="required-indicator">*</span></label>
+                                    <p class="upload-guideline">Front and back combined or single document. (PDF, JPG, PNG, max 5MB)</p>
+                                    
+                                    <div class="custom-file-upload" id="aadhaar-upload-zone">
+                                        <input type="file" id="aadhaarCopy" name="aadhaarCopy" accept="image/png, image/jpeg, image/jpg, application/pdf" required class="file-input-hidden">
+                                        <div class="upload-zone-content">
+                                            <ion-icon name="cloud-upload-outline" class="upload-icon"></ion-icon>
+                                            <span class="upload-zone-text">Drag and drop file here or <strong>browse</strong></span>
+                                        </div>
+                                    </div>
+                                    <div class="file-preview-card" id="aadhaar-preview-card">
+                                        <div class="file-preview-details">
+                                            <ion-icon name="document-text-outline" class="file-icon"></ion-icon>
+                                            <div class="file-meta">
+                                                <span class="file-name" id="aadhaar-file-name">filename.pdf</span>
+                                                <span class="file-size" id="aadhaar-file-size">350 KB</span>
+                                            </div>
+                                        </div>
+                                        <button type="button" class="remove-file-btn" id="aadhaar-remove-btn" aria-label="Remove Aadhaar">
+                                            <ion-icon name="close-circle"></ion-icon>
+                                        </button>
+                                    </div>
+                                    <span class="error-msg inline-error" id="aadhaar-error">Please upload a valid Aadhaar document.</span>
+                                </div>
+
+                                <!-- Upload 3: Marksheet -->
+                                <div class="upload-box-group required">
+                                    <label class="field-section-label">Previous Exam Marksheet <span class="required-indicator">*</span></label>
+                                    <p class="upload-guideline">Self-attested copy of marksheet of last board or equivalent exam. (PDF, JPG, PNG, max 5MB)</p>
+                                    
+                                    <div class="custom-file-upload" id="marksheet-upload-zone">
+                                        <input type="file" id="marksheetCopy" name="marksheetCopy" accept="image/png, image/jpeg, image/jpg, application/pdf" required class="file-input-hidden">
+                                        <div class="upload-zone-content">
+                                            <ion-icon name="cloud-upload-outline" class="upload-icon"></ion-icon>
+                                            <span class="upload-zone-text">Drag and drop file here or <strong>browse</strong></span>
+                                        </div>
+                                    </div>
+                                    <div class="file-preview-card" id="marksheet-preview-card">
+                                        <div class="file-preview-details">
+                                            <ion-icon name="document-attach-outline" class="file-icon"></ion-icon>
+                                            <div class="file-meta">
+                                                <span class="file-name" id="marksheet-file-name">filename.jpg</span>
+                                                <span class="file-size" id="marksheet-file-size">1.2 MB</span>
+                                            </div>
+                                        </div>
+                                        <button type="button" class="remove-file-btn" id="marksheet-remove-btn" aria-label="Remove marksheet">
+                                            <ion-icon name="close-circle"></ion-icon>
+                                        </button>
+                                    </div>
+                                    <span class="error-msg inline-error" id="marksheet-error">Please upload a valid marksheet.</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- STEP 7: TERMS & CONDITIONS -->
+                        <div class="form-step-panel" id="step-7-panel">
+                            <div class="panel-header">
+                                <h2>Section 7: Terms & Conditions</h2>
+                                <p>Carefully read and consent to the institute policies and regulatory rules</p>
+                            </div>
+
+                            <!-- Scrollable Terms Box -->
+                            <div class="terms-scroll-box" id="termsScrollContainer">
+                                <h3>Lakshya Private Tuitions - Admission Agreement</h3>
+                                <p class="terms-intro">Please read the following clauses carefully. You must scroll to the very bottom of these terms to proceed and ensure proper understanding of the admission policy.</p>
+                                
+                                <ol class="terms-list-styled">
+                                    <li>
+                                        <strong>Regular Work and Student Conduct:</strong> 
+                                        The student enrolled with Lakshya Private Tuitions (LPT) must work hard regularly. In case the faculty feels the student is not making sincere efforts, is creating indiscipline, bullying students, teachers, or staff in the premises or vicinity of the institute, showing irregular attendance, or spreading false, wrong, and negative information about the institute on social media or anywhere outside, he/she may be expelled immediately. The decision of the Center Incharge in this regard will be final. No fee or part of fee will be refunded.
+                                    </li>
+                                    <li>
+                                        <strong>Attendance Requirements:</strong> 
+                                        Continuous attendance is compulsory. If a student is absent for more than 10 days continuously without prior written permission, they will not be allowed to attend classes and will not receive any test papers. LPT reserves the right to expel the student in such cases, and no separate information will be sent to the parents, nor will any refunds of fees or post-dated cheques (PDCs) be processed.
+                                    </li>
+                                    <li>
+                                        <strong>Fees and Refund Policy:</strong> 
+                                        After depositing money towards "Registration & Admission", if a student or parent wishes to cancel the admission for any reason whatsoever, **the institute will NOT refund the money deposited towards Registration Fee / Admission Fee** under any circumstances. However, if a student applies for refund before the official commencement of the course/classes, only the first installment of tuition fee will be returned along with any submitted PDCs. Registration fees are strictly non-transferable and cannot be adjusted against other courses.
+                                    </li>
+                                    <li>
+                                        <strong>Post-Dated Cheques (PDC):</strong> 
+                                        If fees are paid in installments, parents must submit all required Post-Dated Cheques (PDC) at the time of admission. In case of a bounced cheque, a fine of ₹1,000/- plus banking charges will be recovered in cash only. The student's name may be struck off from the register if installment clearance is delayed by more than 10 days from the due date.
+                                    </li>
+                                    <li>
+                                        <strong>Batch Timings and Availability:</strong> 
+                                        Batch timings are allocated based on availability and student performance/stream selection. Request for batch changes must be submitted in writing and is subject strictly to seat availability and approval of the Center Incharge.
+                                    </li>
+                                    <li>
+                                        <strong>Parent Cooperation and Review:</strong> 
+                                        Parents are requested to fully cooperate with the institute and monitor their ward's regular study habits at home. Parents must attend Parent-Teacher Meetings (PTM) as scheduled. LPT provides student progress updates via call, WhatsApp, and SMS, and parents must ensure their contact coordinates are active and up-to-date.
+                                    </li>
+                                    <li>
+                                        <strong>Scholarship Validity:</strong> 
+                                        Scholarships are granted based on either the entrance exam performance or past school/board achievements. The scholarship is strictly applicable only if the student maintains a minimum of 80% attendance in both lectures and tests, and exhibits disciplined behavior. In case of violation, the scholarship will be revoked, and full fees will be recovered.
+                                    </li>
+                                    <li>
+                                        <strong>Right of Publicity:</strong> 
+                                        The institute reserves the right to use the student's name, photograph, and exam results in its advertising material, flyers, banners, social media profiles, and website across all regions upon securing outstanding grades or clearing entrance exams (JEE, NEET, MHT-CET, etc.).
+                                    </li>
+                                    <li>
+                                        <strong>Regulatory & Statutory Rights:</strong> 
+                                        LPT reserves all rights to alter rules, schedules, fee structure, faculty members, and test series patterns without any prior notification. All disputes are subject to Mumbai/Dombivli jurisdiction only.
+                                    </li>
+                                </ol>
+                            </div>
+
+                            <!-- Scroll indicators/helper -->
+                            <div class="scroll-helper-info" id="scrollIndicator">
+                                <ion-icon name="arrow-down-circle"></ion-icon>
+                                <span>Please scroll to the bottom of the terms to read the full policy.</span>
+                            </div>
+
+                            <!-- Consent Checkboxes Container -->
+                            <div class="consent-checkboxes-wrapper mt-30">
+                                <label class="custom-checkbox-container required">
+                                    <input type="checkbox" id="consentTerms" class="consent-checkbox-input" required>
+                                    <span class="checkbox-checkmark"></span>
+                                    <span class="checkbox-label-text">I have read and agree to all terms and conditions of Lakshya Private Tuitions. <span class="required-asterisk">*</span></span>
+                                </label>
+                                <span class="error-msg inline-error">You must agree to the Terms & Conditions.</span>
+
+                                <label class="custom-checkbox-container required">
+                                    <input type="checkbox" id="consentRefund" class="consent-checkbox-input" required>
+                                    <span class="checkbox-checkmark"></span>
+                                    <span class="checkbox-label-text">I understand that fees once paid are non-refundable under institute policy. <span class="required-asterisk">*</span></span>
+                                </label>
+                                <span class="error-msg inline-error">You must acknowledge the refund policy.</span>
+
+                                <label class="custom-checkbox-container required">
+                                    <input type="checkbox" id="consentCommunication" class="consent-checkbox-input" required>
+                                    <span class="checkbox-checkmark"></span>
+                                    <span class="checkbox-label-text">I consent to Lakshya Private Tuitions contacting me through phone, WhatsApp, SMS, or email. <span class="required-asterisk">*</span></span>
+                                </label>
+                                <span class="error-msg inline-error">You must consent to institute communications.</span>
+                            </div>
+                        </div>
+
+                        <!-- STEP 8: FINAL SUBMISSION -->
+                        <div class="form-step-panel" id="step-8-panel">
+                            <div class="panel-header">
+                                <h2>Section 8: Final Submission</h2>
+                                <p>Sign your application, verify your draft, and submit to LPT Admissions</p>
+                            </div>
+
+                            <!-- Summary Card for Review -->
+                            <div class="submission-summary-card">
+                                <h3>Application Summary</h3>
+                                <div class="summary-details-list">
+                                    <div class="summary-row">
+                                        <span class="summary-label">Student Name:</span>
+                                        <span class="summary-value" id="summary-name">—</span>
+                                    </div>
+                                    <div class="summary-row">
+                                        <span class="summary-label">Email:</span>
+                                        <span class="summary-value" id="summary-email">—</span>
+                                    </div>
+                                    <div class="summary-row">
+                                        <span class="summary-label">Mobile:</span>
+                                        <span class="summary-value" id="summary-mobile">—</span>
+                                    </div>
+                                    <div class="summary-row">
+                                        <span class="summary-label">Selected Courses:</span>
+                                        <span class="summary-value" id="summary-courses">—</span>
+                                    </div>
+                                    <div class="summary-row">
+                                        <span class="summary-label">Preferred Branch:</span>
+                                        <span class="summary-value" id="summary-branch">—</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group required mt-30">
+                                <label for="signature">Typed Declaration / Digital Signature</label>
+                                <p class="field-sub-label">Type the full name of the student/parent as a legal signature declaration.</p>
+                                <input type="text" id="signature" name="signature" placeholder="Type full name here to sign" required class="form-input signature-input">
+                                <span class="error-msg">Typed signature declaration is required to submit.</span>
+                                
+                                <div class="signature-style-preview" id="signature-preview">
+                                    Your digital signature will appear here
+                                </div>
+                            </div>
+
+                            <!-- Form Action Buttons -->
+                            <div class="form-action-buttons-box">
+                                <button type="button" class="btn btn-secondary btn-outline" id="saveDraftBtn">
+                                    <ion-icon name="save-outline"></ion-icon>
+                                    <span>Save Draft</span>
+                                </button>
+                                <button type="submit" class="btn btn-primary" id="submitAdmissionBtn" disabled>
+                                    <ion-icon name="send-outline"></ion-icon>
+                                    <span>Submit Admission</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- STEPPER BUTTON NAVIGATION (Back & Next) -->
+                        <div class="form-step-navigation" id="formStepNavigationButtons">
+                            <button type="button" class="btn btn-glass btn-step-nav" id="prevStepBtn" disabled>
+                                <ion-icon name="arrow-back-outline"></ion-icon>
+                                <span>Back</span>
+                            </button>
+                            <button type="button" class="btn btn-secondary btn-step-nav" id="nextStepBtn">
+                                <span>Next Step</span>
+                                <ion-icon name="arrow-forward-outline"></ion-icon>
+                            </button>
+                        </div>
+                    </form>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- LOADING SUBMISSION SPINNER OVERLAY -->
+    <div class="spinner-overlay" id="spinnerOverlay">
+        <div class="spinner-card">
+            <div class="spinner-ring"></div>
+            <h3>Processing Application</h3>
+            <p>Please wait. We are validating and uploading your documents to the admission portal...</p>
+        </div>
+    </div>
+
+    <!-- SUCCESS POPUP MODAL -->
+    <div class="success-modal-overlay" id="successModal">
+        <div class="success-modal-card">
+            <!-- Dynamic particles for visual wow -->
+            <div class="confetti-holder"></div>
+            
+            <div class="success-icon-box">
+                <ion-icon name="checkmark-done-circle"></ion-icon>
+            </div>
+            <h2>Admission Form Submitted!</h2>
+            <p class="success-lead">Congratulations! Your online admission form for <strong>Lakshya Private Tuitions</strong> has been received successfully.</p>
+            
+            <div class="receipt-box">
+                <div class="receipt-row">
+                    <span>Application ID:</span>
+                    <strong id="receipt-id">LPT-2026-9872</strong>
+                </div>
+                <div class="receipt-row">
+                    <span>Student Name:</span>
+                    <span id="receipt-name">Kshitij Sharma</span>
+                </div>
+                <div class="receipt-row">
+                    <span>Allocated Branch:</span>
+                    <span id="receipt-branch">Mulund West Branch</span>
+                </div>
+            </div>
+            
+            <p class="success-next-steps">
+                Our counselor will contact you within <strong>24 hours</strong> on your registered mobile number for document verification and fee payment scheduling.
+            </p>
+
+            <div class="success-modal-actions">
+                <button type="button" class="btn btn-primary" id="successCloseBtn">Return to Home</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Lakshya Tuitions</h3>
+                    <p>
+                        Building futures through quality education. Join thousands of successful
+                        students who achieved their dreams with us.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <ion-icon name="logo-facebook"></ion-icon>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <ion-icon name="logo-instagram"></ion-icon>
+                        </a>
+                        <a href="#" class="social-link" aria-label="YouTube">
+                            <ion-icon name="logo-youtube"></ion-icon>
+                        </a>
+                        <a href="#" class="social-link" aria-label="WhatsApp">
+                            <ion-icon name="logo-whatsapp"></ion-icon>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <div class="footer-links">
+                        <a href="index.html" class="footer-link">
+                            <ion-icon name="chevron-forward-outline"></ion-icon>
+                            <span>Home</span>
+                        </a>
+                        <a href="courses.html" class="footer-link">
+                            <ion-icon name="chevron-forward-outline"></ion-icon>
+                            <span>Courses</span>
+                        </a>
+                        <a href="udaan.html" class="footer-link">
+                            <ion-icon name="chevron-forward-outline"></ion-icon>
+                            <span>Udaan Event</span>
+                        </a>
+                        <a href="about.html" class="footer-link">
+                            <ion-icon name="chevron-forward-outline"></ion-icon>
+                            <span>About Us</span>
+                        </a>
+                        <a href="contact.html" class="footer-link">
+                            <ion-icon name="chevron-forward-outline"></ion-icon>
+                            <span>Contact</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Our Courses</h3>
+                    <div class="footer-links">
+                        <a href="courses.html" class="footer-link">
+                            <ion-icon name="chevron-forward-outline"></ion-icon>
+                            <span>JEE Preparation</span>
+                        </a>
+                        <a href="courses.html" class="footer-link">
+                            <ion-icon name="chevron-forward-outline"></ion-icon>
+                            <span>NEET Preparation</span>
+                        </a>
+                        <a href="courses.html" class="footer-link">
+                            <ion-icon name="chevron-forward-outline"></ion-icon>
+                            <span>MHT-CET Coaching</span>
+                        </a>
+                        <a href="courses.html" class="footer-link">
+                            <ion-icon name="chevron-forward-outline"></ion-icon>
+                            <span>Class 11-12 (Sci/Comm)</span>
+                        </a>
+                        <a href="courses.html" class="footer-link">
+                            <ion-icon name="chevron-forward-outline"></ion-icon>
+                            <span>Class 8-9-10</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <div class="footer-links">
+                        <div class="footer-link">
+                            <ion-icon name="location-outline"></ion-icon>
+                            <span>Mulund West & Dombivli East</span>
+                        </div>
+                        <div class="footer-link">
+                            <ion-icon name="call-outline"></ion-icon>
+                            <span>Mulund: 9136655448 | Dombivli: 9167788777</span>
+                        </div>
+                        <div class="footer-link">
+                            <ion-icon name="mail-outline"></ion-icon>
+                            <span>lakshyaprivatetuitions@gmail.com</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Lakshya Private Tuitions. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- BACK TO TOP -->
+    <a href="#top" class="back-to-top" aria-label="back to top">
+        <ion-icon name="chevron-up-outline"></ion-icon>
+    </a>
+
+    <!-- Custom Script for validations and step interactions -->
+    <script src="script.js" defer></script>
+    <script src="admission.js" defer></script>
+</body>
+
+</html>
