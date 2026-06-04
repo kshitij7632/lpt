@@ -17,8 +17,21 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Address Sync
     const sameAddressToggle = document.getElementById('sameAddressToggle');
-    const permAddressInput = document.getElementById('permanentAddress');
-    const corrAddressInput = document.getElementById('correspondenceAddress');
+    const permHouseNoInput = document.getElementById('permHouseNo');
+    const permBuildNameInput = document.getElementById('permBuildName');
+    const permStreetInput = document.getElementById('permStreet');
+    const permLandmarkInput = document.getElementById('permLandmark');
+    const permStateSelect = document.getElementById('permState');
+    const permCityInput = document.getElementById('permCity');
+    const permPinCodeInput = document.getElementById('permPinCode');
+
+    const corrHouseNoInput = document.getElementById('corrHouseNo');
+    const corrBuildNameInput = document.getElementById('corrBuildName');
+    const corrStreetInput = document.getElementById('corrStreet');
+    const corrLandmarkInput = document.getElementById('corrLandmark');
+    const corrStateSelect = document.getElementById('corrState');
+    const corrCityInput = document.getElementById('corrCity');
+    const corrPinCodeInput = document.getElementById('corrPinCode');
     
     // File Upload Zones
     const fileInputs = {
@@ -44,14 +57,36 @@ document.addEventListener('DOMContentLoaded', () => {
             allowedTypes: ['image/png', 'image/jpeg', 'image/jpg', 'application/pdf'],
             maxSize: 5 * 1024 * 1024 // 5MB
         },
-        marksheet: {
-            input: document.getElementById('marksheetCopy'),
-            zone: document.getElementById('marksheet-upload-zone'),
-            card: document.getElementById('marksheet-preview-card'),
-            name: document.getElementById('marksheet-file-name'),
-            size: document.getElementById('marksheet-file-size'),
-            remove: document.getElementById('marksheet-remove-btn'),
-            error: document.getElementById('marksheet-error'),
+        marksheet8: {
+            input: document.getElementById('marksheet8Copy'),
+            zone: document.getElementById('marksheet8-upload-zone'),
+            card: document.getElementById('marksheet8-preview-card'),
+            name: document.getElementById('marksheet8-file-name'),
+            size: document.getElementById('marksheet8-file-size'),
+            remove: document.getElementById('marksheet8-remove-btn'),
+            error: document.getElementById('marksheet8-error'),
+            allowedTypes: ['image/png', 'image/jpeg', 'image/jpg', 'application/pdf'],
+            maxSize: 5 * 1024 * 1024 // 5MB
+        },
+        marksheet9: {
+            input: document.getElementById('marksheet9Copy'),
+            zone: document.getElementById('marksheet9-upload-zone'),
+            card: document.getElementById('marksheet9-preview-card'),
+            name: document.getElementById('marksheet9-file-name'),
+            size: document.getElementById('marksheet9-file-size'),
+            remove: document.getElementById('marksheet9-remove-btn'),
+            error: document.getElementById('marksheet9-error'),
+            allowedTypes: ['image/png', 'image/jpeg', 'image/jpg', 'application/pdf'],
+            maxSize: 5 * 1024 * 1024 // 5MB
+        },
+        marksheet10: {
+            input: document.getElementById('marksheet10Copy'),
+            zone: document.getElementById('marksheet10-upload-zone'),
+            card: document.getElementById('marksheet10-preview-card'),
+            name: document.getElementById('marksheet10-file-name'),
+            size: document.getElementById('marksheet10-file-size'),
+            remove: document.getElementById('marksheet10-remove-btn'),
+            error: document.getElementById('marksheet10-error'),
             allowedTypes: ['image/png', 'image/jpeg', 'image/jpg', 'application/pdf'],
             maxSize: 5 * 1024 * 1024 // 5MB
         }
@@ -79,23 +114,27 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Required fields mapping per step for validation
     const stepFields = {
-        1: ['firstName', 'lastName', 'dob', 'gender', 'bloodGroup', 'studentMobile', 'studentEmail', 'aadhaarNo'],
+        1: ['firstName', 'lastName', 'dob', 'gender', 'studentMobile', 'studentEmail'],
         2: ['fatherName', 'motherName', 'parentMobile', 'fatherOccupation', 'motherOccupation'],
-        3: ['permanentAddress', 'correspondenceAddress', 'state', 'city', 'pinCode'],
-        4: ['courses', 'preferredTiming', 'branch'], // Custom check for courses checkbox group
-        5: ['schoolCollege', 'board', 'previousPercentage', 'scholarship', 'subjects'],
-        6: ['studentPhoto', 'aadhaarCopy', 'marksheetCopy'], // Custom check for file inputs
+        3: [
+            'permHouseNo', 'permBuildName', 'permStreet', 'permState', 'permCity', 'permPinCode',
+            'corrHouseNo', 'corrBuildName', 'corrStreet', 'corrState', 'corrCity', 'corrPinCode'
+        ],
+        4: ['courses', 'preferredTiming', 'branch'],
+        5: ['board', 'previousPercentage', 'scholarship', 'subjects'],
+        6: ['studentPhoto', 'aadhaarCopy', 'marksheet8Copy', 'marksheet9Copy', 'marksheet10Copy'],
         7: ['consentTerms', 'consentRefund', 'consentCommunication'],
         8: ['signature']
     };
 
     // All required input fields for global progress tracker calculation
     const allRequiredTextIds = [
-        'firstName', 'lastName', 'dob', 'gender', 'bloodGroup', 'studentMobile', 'studentEmail', 'aadhaarNo',
+        'firstName', 'lastName', 'dob', 'gender', 'studentMobile', 'studentEmail',
         'fatherName', 'motherName', 'parentMobile', 'fatherOccupation', 'motherOccupation',
-        'permanentAddress', 'correspondenceAddress', 'state', 'city', 'pinCode',
+        'permHouseNo', 'permBuildName', 'permStreet', 'permState', 'permCity', 'permPinCode',
+        'corrHouseNo', 'corrBuildName', 'corrStreet', 'corrState', 'corrCity', 'corrPinCode',
         'preferredTiming', 'branch',
-        'schoolCollege', 'board', 'previousPercentage', 'scholarship', 'subjects',
+        'board', 'previousPercentage', 'scholarship', 'subjects',
         'signature'
     ];
 
@@ -226,10 +265,17 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             // Custom validations for file inputs
-            if (fieldName === 'studentPhoto' || fieldName === 'aadhaarCopy' || fieldName === 'marksheetCopy') {
-                const configKey = fieldName === 'studentPhoto' ? 'photo' : (fieldName === 'aadhaarCopy' ? 'aadhaar' : 'marksheet');
+            if (fieldName === 'studentPhoto' || fieldName === 'aadhaarCopy' || fieldName === 'marksheet8Copy' || fieldName === 'marksheet9Copy' || fieldName === 'marksheet10Copy') {
+                const configKey = fieldName === 'studentPhoto' ? 'photo' : (fieldName === 'aadhaarCopy' ? 'aadhaar' : (fieldName === 'marksheet8Copy' ? 'marksheet8' : (fieldName === 'marksheet9Copy' ? 'marksheet9' : 'marksheet10')));
                 const fileObj = fileInputs[configKey];
                 const formGroup = fileObj.zone.closest('.upload-box-group');
+                
+                // If it is an optional marksheet and is empty, skip validation
+                if ((fieldName === 'marksheet8Copy' || fieldName === 'marksheet9Copy' || fieldName === 'marksheet10Copy') && (!fileObj.input.files || fileObj.input.files.length === 0)) {
+                    formGroup.classList.remove('invalid');
+                    fileObj.error.style.display = 'none';
+                    return;
+                }
                 
                 if (!fileObj.input.files || fileObj.input.files.length === 0) {
                     formGroup.classList.add('invalid');
@@ -279,7 +325,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
             // PIN Code pattern check
-            else if (fieldName === 'pinCode' && field.value.trim()) {
+            else if ((fieldName === 'permPinCode' || fieldName === 'corrPinCode') && field.value.trim()) {
                 const pinRegex = /^[0-9]{6}$/;
                 if (!pinRegex.test(field.value.trim())) {
                     isFieldValid = false;
@@ -353,7 +399,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // ==========================================================================
     
     function updateProgress() {
-        let totalRequired = allRequiredTextIds.length + 3 + 3; // text ids + 3 uploads + 3 consent check boxes
+        let totalRequired = allRequiredTextIds.length + 2 + 3; // text ids + 2 uploads + 3 consent check boxes
         let completedCount = 0;
 
         // 1. Text, Select and Textarea Required Fields
@@ -368,7 +414,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     isValid = /^[0-9]{10}$/.test(el.value.trim());
                 } else if (id === 'aadhaarNo') {
                     isValid = /^[0-9]{12}$/.test(el.value.trim());
-                } else if (id === 'pinCode') {
+                } else if (id === 'permPinCode' || id === 'corrPinCode') {
                     isValid = /^[0-9]{6}$/.test(el.value.trim());
                 } else if (id === 'previousPercentage') {
                     const pct = parseFloat(el.value);
@@ -390,7 +436,6 @@ document.addEventListener('DOMContentLoaded', () => {
         // 3. Mandatory document uploads (1 point each)
         if (fileInputs.photo.input.files && fileInputs.photo.input.files.length > 0) completedCount++;
         if (fileInputs.aadhaar.input.files && fileInputs.aadhaar.input.files.length > 0) completedCount++;
-        if (fileInputs.marksheet.input.files && fileInputs.marksheet.input.files.length > 0) completedCount++;
 
         // 4. Consent Checkboxes (1 point each)
         if (consentTerms.checked) completedCount++;
@@ -427,29 +472,52 @@ document.addEventListener('DOMContentLoaded', () => {
         syncAddressDetails();
     });
 
-    permAddressInput.addEventListener('input', () => {
-        if (sameAddressToggle.checked) {
-            corrAddressInput.value = permAddressInput.value;
-            // Clear invalid borders if copied successfully
-            const corrGroup = corrAddressInput.closest('.form-group');
-            if (corrGroup) corrGroup.classList.remove('invalid');
-        }
+    const addressSyncPairs = [
+        { perm: permHouseNoInput, corr: corrHouseNoInput },
+        { perm: permBuildNameInput, corr: corrBuildNameInput },
+        { perm: permStreetInput, corr: corrStreetInput },
+        { perm: permLandmarkInput, corr: corrLandmarkInput },
+        { perm: permStateSelect, corr: corrStateSelect },
+        { perm: permCityInput, corr: corrCityInput },
+        { perm: permPinCodeInput, corr: corrPinCodeInput }
+    ];
+
+    addressSyncPairs.forEach(pair => {
+        const handler = () => {
+            if (sameAddressToggle.checked) {
+                pair.corr.value = pair.perm.value;
+                const corrGroup = pair.corr.closest('.form-group');
+                if (corrGroup) corrGroup.classList.remove('invalid');
+                updateProgress();
+            }
+        };
+        pair.perm.addEventListener('input', handler);
+        pair.perm.addEventListener('change', handler);
     });
 
     function syncAddressDetails() {
         if (sameAddressToggle.checked) {
-            corrAddressInput.value = permAddressInput.value;
-            corrAddressInput.readOnly = true;
-            // Visual locking feedback styling
-            corrAddressInput.style.background = 'rgba(239, 243, 250, 0.7)';
-            corrAddressInput.style.borderColor = 'rgba(0, 71, 171, 0.1)';
-            
-            const corrGroup = corrAddressInput.closest('.form-group');
-            if (corrGroup) corrGroup.classList.remove('invalid');
+            addressSyncPairs.forEach(pair => {
+                pair.corr.value = pair.perm.value;
+                pair.corr.readOnly = true;
+                if (pair.corr.tagName === 'SELECT') {
+                    pair.corr.disabled = true;
+                }
+                pair.corr.style.background = 'rgba(239, 243, 250, 0.7)';
+                pair.corr.style.borderColor = 'rgba(0, 71, 171, 0.1)';
+                
+                const corrGroup = pair.corr.closest('.form-group');
+                if (corrGroup) corrGroup.classList.remove('invalid');
+            });
         } else {
-            corrAddressInput.readOnly = false;
-            corrAddressInput.style.background = 'rgba(255, 255, 255, 0.9)';
-            corrAddressInput.style.borderColor = 'rgba(0, 71, 171, 0.15)';
+            addressSyncPairs.forEach(pair => {
+                pair.corr.readOnly = false;
+                if (pair.corr.tagName === 'SELECT') {
+                    pair.corr.disabled = false;
+                }
+                pair.corr.style.background = 'rgba(255, 255, 255, 0.9)';
+                pair.corr.style.borderColor = 'rgba(0, 71, 171, 0.15)';
+            });
         }
         updateProgress();
     }
@@ -889,8 +957,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 PhotoName: fileInputs.photo.fileName || '',
                 AadhaarBase64: fileInputs.aadhaar.base64 || '',
                 AadhaarName: fileInputs.aadhaar.fileName || '',
-                MarksheetBase64: fileInputs.marksheet.base64 || '',
-                MarksheetName: fileInputs.marksheet.fileName || '',
+                Marksheet8Base64: fileInputs.marksheet8.base64 || '',
+                Marksheet8Name: fileInputs.marksheet8.fileName || '',
+                Marksheet9Base64: fileInputs.marksheet9.base64 || '',
+                Marksheet9Name: fileInputs.marksheet9.fileName || '',
+                Marksheet10Base64: fileInputs.marksheet10.base64 || '',
+                Marksheet10Name: fileInputs.marksheet10.fileName || '',
                 Timestamp: new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })
             };
 

@@ -427,7 +427,7 @@ ul {
 }
 
 .logo img {
-    height: 80px;
+    height: 100px;
     /* Increased height */
     width: auto;
     max-width: 350px;
@@ -1804,6 +1804,14 @@ select.form-control {
 /* ===== RESPONSIVE DESIGN ===== */
 @media (max-width: 992px) {
 
+    .logo img {
+        height: 65px;
+    }
+
+    .navbar {
+        gap: 20px;
+    }
+
     .hero-content,
     .about-content,
     .contact-content,
@@ -1888,6 +1896,8 @@ select.form-control {
     .top-bar-content {
         justify-content: center;
         text-align: center;
+        flex-direction: column;
+        gap: 8px;
     }
 
     .section {
@@ -1986,7 +1996,7 @@ select.form-control {
     }
 
     .logo img {
-        height: 70px;
+        height: 55px;
     }
 
     .udaan-image-wrapper {
@@ -2071,7 +2081,7 @@ select.form-control {
 
 @media (max-width: 480px) {
     .logo img {
-        height: 65px;
+        height: 48px;
     }
 
     .hero-text h1 {
@@ -2204,6 +2214,17 @@ select.form-control {
         max-height: 380px;
         /* Even smaller for small phones */
         border-radius: var(--radius-sm);
+    }
+
+    .footer-link {
+        font-size: 0.85rem;
+        flex-wrap: wrap;
+        word-break: break-all;
+    }
+
+    .dropdown-content a {
+        padding: 10px 12px;
+        font-size: 0.88rem;
     }
 
 }

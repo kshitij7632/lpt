@@ -11,7 +11,7 @@
     
     <link rel="canonical" href="https://lakshyaprivatetuition.com/admission.html">
     <meta name="robots" content="index, follow">
-    <link rel="icon" href="logo.png">
+    <link rel="icon" href="lpt_header.png">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -179,16 +179,16 @@
         /* ---- MOBILE (≤480px) ---- */
         @media (max-width: 480px) {
             .portal-header-inner {
-                height: 84px !important;
-                padding: 0 2px !important;
+                height: 80px !important;
+                padding: 0 8px !important;
             }
-            .portal-branding { gap: 8px !important; }
-            .lpt-header-logo img { height: 40px !important; }
-            .brand-divider { height: 40px !important; margin: 0 2px !important; }
-            .powered-by-text { font-size: 0.5rem !important; letter-spacing: 2px !important; }
-            .vedantu-logo-img { height: 42px !important; }
+            .portal-branding { gap: 6px !important; }
+            .lpt-header-logo img { height: 32px !important; }
+            .brand-divider { height: 30px !important; margin: 0 4px !important; }
+            .powered-by-text { font-size: 0.45rem !important; letter-spacing: 1.5px !important; }
+            .vedantu-logo-img { height: 32px !important; }
             .back-home-btn span { display: none !important; }
-            .back-home-btn { padding: 10px 12px !important; gap: 0 !important; margin-right: 0 !important; }
+            .back-home-btn { padding: 8px 12px !important; gap: 0 !important; margin-right: 0 !important; font-size: 0.8rem !important; }
         }
     </style>
 </head>
@@ -328,9 +328,9 @@
                                     </select>
                                     <span class="error-msg">Please select gender.</span>
                                 </div>
-                                <div class="form-group required">
-                                    <label for="bloodGroup">Blood Group</label>
-                                    <select id="bloodGroup" name="bloodGroup" required class="form-input select-input">
+                                <div class="form-group">
+                                    <label for="bloodGroup">Blood Group <span class="optional-label">(Optional)</span></label>
+                                    <select id="bloodGroup" name="bloodGroup" class="form-input select-input">
                                         <option value="" disabled selected>Select Blood Group</option>
                                         <option value="A+">A+</option>
                                         <option value="A-">A-</option>
@@ -353,10 +353,10 @@
                                     <input type="email" id="studentEmail" name="studentEmail" placeholder="e.g., student@gmail.com" required class="form-input">
                                     <span class="error-msg">Enter a valid email address.</span>
                                 </div>
-                                <div class="form-group required">
-                                    <label for="aadhaarNo">Aadhaar Number</label>
-                                    <input type="text" id="aadhaarNo" name="aadhaarNo" placeholder="e.g., 123456789012" pattern="[0-9]{12}" maxlength="12" required class="form-input">
-                                    <span class="error-msg">Enter a valid 12-digit Aadhaar number.</span>
+                                <div class="form-group">
+                                    <label for="aadhaarNo">Aadhaar Number <span class="optional-label">(Optional)</span></label>
+                                    <input type="text" id="aadhaarNo" name="aadhaarNo" placeholder="e.g., 123456789012" pattern="[0-9]{12}" maxlength="12" class="form-input">
+                                    <span class="error-msg">Enter a valid Aadhaar number.</span>
                                 </div>
                                 <div class="form-group">
                                     <label for="instagramId">Instagram ID <span class="optional-label">(Optional)</span></label>
@@ -411,10 +411,56 @@
                                 <p>Provide physical address information for communications</p>
                             </div>
                             
-                            <div class="form-group required">
-                                <label for="permanentAddress">Permanent Address</label>
-                                <textarea id="permanentAddress" name="permanentAddress" rows="3" placeholder="Enter complete permanent address" required class="form-input textarea-input"></textarea>
-                                <span class="error-msg">Permanent address is required.</span>
+                            <!-- Permanent Address Group -->
+                            <div class="address-sub-section">
+                                <h3 class="address-section-title">Permanent Address</h3>
+                                <div class="form-fields-grid">
+                                    <div class="form-group required">
+                                        <label for="permHouseNo">House/Flat No.</label>
+                                        <input type="text" id="permHouseNo" name="permHouseNo" placeholder="e.g., A/102" required class="form-input">
+                                        <span class="error-msg">House/Flat No. is required.</span>
+                                    </div>
+                                    <div class="form-group required">
+                                        <label for="permBuildName">Building/Society Name</label>
+                                        <input type="text" id="permBuildName" name="permBuildName" placeholder="e.g., Gokul Heights" required class="form-input">
+                                        <span class="error-msg">Building/Society Name is required.</span>
+                                    </div>
+                                </div>
+                                <div class="form-fields-grid">
+                                    <div class="form-group required">
+                                        <label for="permStreet">Street/Area</label>
+                                        <input type="text" id="permStreet" name="permStreet" placeholder="e.g., M.G. Road" required class="form-input">
+                                        <span class="error-msg">Street/Area is required.</span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="permLandmark">Landmark <span class="optional-label">(Optional)</span></label>
+                                        <input type="text" id="permLandmark" name="permLandmark" placeholder="e.g., Near Station" class="form-input">
+                                    </div>
+                                </div>
+                                <div class="form-fields-grid thirds-grid">
+                                    <div class="form-group required">
+                                        <label for="permState">State</label>
+                                        <select id="permState" name="permState" required class="form-input select-input">
+                                            <option value="" disabled>Select State</option>
+                                            <option value="Maharashtra" selected>Maharashtra</option>
+                                            <option value="Goa">Goa</option>
+                                            <option value="Gujarat">Gujarat</option>
+                                            <option value="Karnataka">Karnataka</option>
+                                            <option value="Other">Other</option>
+                                        </select>
+                                        <span class="error-msg">State is required.</span>
+                                    </div>
+                                    <div class="form-group required">
+                                        <label for="permCity">City</label>
+                                        <input type="text" id="permCity" name="permCity" placeholder="e.g., Mulund, Dombivli" required class="form-input">
+                                        <span class="error-msg">City is required.</span>
+                                    </div>
+                                    <div class="form-group required">
+                                        <label for="permPinCode">PIN Code</label>
+                                        <input type="text" id="permPinCode" name="permPinCode" placeholder="e.g., 400080" pattern="[0-9]{6}" maxlength="6" required class="form-input">
+                                        <span class="error-msg">Enter a valid 6-digit PIN code.</span>
+                                    </div>
+                                </div>
                             </div>
 
                             <!-- Modern Checkbox Toggle to copy address -->
@@ -428,34 +474,55 @@
                                 </label>
                             </div>
 
-                            <div class="form-group required">
-                                <label for="correspondenceAddress">Correspondence Address</label>
-                                <textarea id="correspondenceAddress" name="correspondenceAddress" rows="3" placeholder="Enter correspondence address" required class="form-input textarea-input"></textarea>
-                                <span class="error-msg">Correspondence address is required.</span>
-                            </div>
-
-                            <div class="form-fields-grid thirds-grid">
-                                <div class="form-group required">
-                                    <label for="state">State</label>
-                                    <select id="state" name="state" required class="form-input select-input">
-                                        <option value="" disabled>Select State</option>
-                                        <option value="Maharashtra" selected>Maharashtra</option>
-                                        <option value="Goa">Goa</option>
-                                        <option value="Gujarat">Gujarat</option>
-                                        <option value="Karnataka">Karnataka</option>
-                                        <option value="Other">Other</option>
-                                    </select>
-                                    <span class="error-msg">State is required.</span>
+                            <!-- Correspondence Address Group -->
+                            <div class="address-sub-section" id="correspondence-section">
+                                <h3 class="address-section-title">Correspondence Address</h3>
+                                <div class="form-fields-grid">
+                                    <div class="form-group required">
+                                        <label for="corrHouseNo">House/Flat No.</label>
+                                        <input type="text" id="corrHouseNo" name="corrHouseNo" placeholder="e.g., A/102" required class="form-input">
+                                        <span class="error-msg">House/Flat No. is required.</span>
+                                    </div>
+                                    <div class="form-group required">
+                                        <label for="corrBuildName">Building/Society Name</label>
+                                        <input type="text" id="corrBuildName" name="corrBuildName" placeholder="e.g., Gokul Heights" required class="form-input">
+                                        <span class="error-msg">Building/Society Name is required.</span>
+                                    </div>
                                 </div>
-                                <div class="form-group required">
-                                    <label for="city">City</label>
-                                    <input type="text" id="city" name="city" placeholder="e.g., Mulund, Dombivli" required class="form-input">
-                                    <span class="error-msg">City is required.</span>
+                                <div class="form-fields-grid">
+                                    <div class="form-group required">
+                                        <label for="corrStreet">Street/Area</label>
+                                        <input type="text" id="corrStreet" name="corrStreet" placeholder="e.g., M.G. Road" required class="form-input">
+                                        <span class="error-msg">Street/Area is required.</span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="corrLandmark">Landmark <span class="optional-label">(Optional)</span></label>
+                                        <input type="text" id="corrLandmark" name="corrLandmark" placeholder="e.g., Near Station" class="form-input">
+                                    </div>
                                 </div>
-                                <div class="form-group required">
-                                    <label for="pinCode">PIN Code</label>
-                                    <input type="text" id="pinCode" name="pinCode" placeholder="e.g., 400080" pattern="[0-9]{6}" maxlength="6" required class="form-input">
-                                    <span class="error-msg">Enter a valid 6-digit PIN code.</span>
+                                <div class="form-fields-grid thirds-grid">
+                                    <div class="form-group required">
+                                        <label for="corrState">State</label>
+                                        <select id="corrState" name="corrState" required class="form-input select-input">
+                                            <option value="" disabled>Select State</option>
+                                            <option value="Maharashtra" selected>Maharashtra</option>
+                                            <option value="Goa">Goa</option>
+                                            <option value="Gujarat">Gujarat</option>
+                                            <option value="Karnataka">Karnataka</option>
+                                            <option value="Other">Other</option>
+                                        </select>
+                                        <span class="error-msg">State is required.</span>
+                                    </div>
+                                    <div class="form-group required">
+                                        <label for="corrCity">City</label>
+                                        <input type="text" id="corrCity" name="corrCity" placeholder="e.g., Mulund, Dombivli" required class="form-input">
+                                        <span class="error-msg">City is required.</span>
+                                    </div>
+                                    <div class="form-group required">
+                                        <label for="corrPinCode">PIN Code</label>
+                                        <input type="text" id="corrPinCode" name="corrPinCode" placeholder="e.g., 400080" pattern="[0-9]{6}" maxlength="6" required class="form-input">
+                                        <span class="error-msg">Enter a valid 6-digit PIN code.</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -646,9 +713,9 @@
                                 <p>Enter your academic history and scholarship information</p>
                             </div>
                             <div class="form-fields-grid">
-                                <div class="form-group required">
-                                    <label for="schoolCollege">School/College Name</label>
-                                    <input type="text" id="schoolCollege" name="schoolCollege" placeholder="Enter school or college name" required class="form-input">
+                                <div class="form-group">
+                                    <label for="schoolCollege">School/College Name <span class="optional-label">(Optional)</span></label>
+                                    <input type="text" id="schoolCollege" name="schoolCollege" placeholder="Enter school or college name" class="form-input">
                                     <span class="error-msg">School/College name is required.</span>
                                 </div>
                                 <div class="form-group required">
@@ -756,31 +823,85 @@
                                     <span class="error-msg inline-error" id="aadhaar-error">Please upload a valid Aadhaar document.</span>
                                 </div>
 
-                                <!-- Upload 3: Marksheet -->
-                                <div class="upload-box-group required">
-                                    <label class="field-section-label">Previous Exam Marksheet <span class="required-indicator">*</span></label>
-                                    <p class="upload-guideline">Self-attested copy of marksheet of last board or equivalent exam. (PDF, JPG, PNG, max 5MB)</p>
+                                <!-- Upload 3: Class 8th Marksheet -->
+                                <div class="upload-box-group">
+                                    <label class="field-section-label">Class 8th Marksheet <span class="optional-label">(Optional)</span></label>
+                                    <p class="upload-guideline">Self-attested copy of marksheet of 8th standard exam. (PDF, JPG, PNG, max 5MB)</p>
                                     
-                                    <div class="custom-file-upload" id="marksheet-upload-zone">
-                                        <input type="file" id="marksheetCopy" name="marksheetCopy" accept="image/png, image/jpeg, image/jpg, application/pdf" required class="file-input-hidden">
+                                    <div class="custom-file-upload" id="marksheet8-upload-zone">
+                                        <input type="file" id="marksheet8Copy" name="marksheet8Copy" accept="image/png, image/jpeg, image/jpg, application/pdf" class="file-input-hidden">
                                         <div class="upload-zone-content">
                                             <ion-icon name="cloud-upload-outline" class="upload-icon"></ion-icon>
                                             <span class="upload-zone-text">Drag and drop file here or <strong>browse</strong></span>
                                         </div>
                                     </div>
-                                    <div class="file-preview-card" id="marksheet-preview-card">
+                                    <div class="file-preview-card" id="marksheet8-preview-card">
                                         <div class="file-preview-details">
                                             <ion-icon name="document-attach-outline" class="file-icon"></ion-icon>
                                             <div class="file-meta">
-                                                <span class="file-name" id="marksheet-file-name">filename.jpg</span>
-                                                <span class="file-size" id="marksheet-file-size">1.2 MB</span>
+                                                <span class="file-name" id="marksheet8-file-name">filename.jpg</span>
+                                                <span class="file-size" id="marksheet8-file-size">1.2 MB</span>
                                             </div>
                                         </div>
-                                        <button type="button" class="remove-file-btn" id="marksheet-remove-btn" aria-label="Remove marksheet">
+                                        <button type="button" class="remove-file-btn" id="marksheet8-remove-btn" aria-label="Remove 8th marksheet">
                                             <ion-icon name="close-circle"></ion-icon>
                                         </button>
                                     </div>
-                                    <span class="error-msg inline-error" id="marksheet-error">Please upload a valid marksheet.</span>
+                                    <span class="error-msg inline-error" id="marksheet8-error">Please upload a valid 8th std marksheet.</span>
+                                </div>
+
+                                <!-- Upload 4: Class 9th Marksheet -->
+                                <div class="upload-box-group">
+                                    <label class="field-section-label">Class 9th Marksheet <span class="optional-label">(Optional)</span></label>
+                                    <p class="upload-guideline">Self-attested copy of marksheet of 9th standard exam. (PDF, JPG, PNG, max 5MB)</p>
+                                    
+                                    <div class="custom-file-upload" id="marksheet9-upload-zone">
+                                        <input type="file" id="marksheet9Copy" name="marksheet9Copy" accept="image/png, image/jpeg, image/jpg, application/pdf" class="file-input-hidden">
+                                        <div class="upload-zone-content">
+                                            <ion-icon name="cloud-upload-outline" class="upload-icon"></ion-icon>
+                                            <span class="upload-zone-text">Drag and drop file here or <strong>browse</strong></span>
+                                        </div>
+                                    </div>
+                                    <div class="file-preview-card" id="marksheet9-preview-card">
+                                        <div class="file-preview-details">
+                                            <ion-icon name="document-attach-outline" class="file-icon"></ion-icon>
+                                            <div class="file-meta">
+                                                <span class="file-name" id="marksheet9-file-name">filename.jpg</span>
+                                                <span class="file-size" id="marksheet9-file-size">1.2 MB</span>
+                                            </div>
+                                        </div>
+                                        <button type="button" class="remove-file-btn" id="marksheet9-remove-btn" aria-label="Remove 9th marksheet">
+                                            <ion-icon name="close-circle"></ion-icon>
+                                        </button>
+                                    </div>
+                                    <span class="error-msg inline-error" id="marksheet9-error">Please upload a valid 9th std marksheet.</span>
+                                </div>
+
+                                <!-- Upload 5: Class 10th Marksheet -->
+                                <div class="upload-box-group">
+                                    <label class="field-section-label">Class 10th Marksheet <span class="optional-label">(Optional)</span></label>
+                                    <p class="upload-guideline">Self-attested copy of marksheet of 10th standard exam. (PDF, JPG, PNG, max 5MB)</p>
+                                    
+                                    <div class="custom-file-upload" id="marksheet10-upload-zone">
+                                        <input type="file" id="marksheet10Copy" name="marksheet10Copy" accept="image/png, image/jpeg, image/jpg, application/pdf" class="file-input-hidden">
+                                        <div class="upload-zone-content">
+                                            <ion-icon name="cloud-upload-outline" class="upload-icon"></ion-icon>
+                                            <span class="upload-zone-text">Drag and drop file here or <strong>browse</strong></span>
+                                        </div>
+                                    </div>
+                                    <div class="file-preview-card" id="marksheet10-preview-card">
+                                        <div class="file-preview-details">
+                                            <ion-icon name="document-attach-outline" class="file-icon"></ion-icon>
+                                            <div class="file-meta">
+                                                <span class="file-name" id="marksheet10-file-name">filename.jpg</span>
+                                                <span class="file-size" id="marksheet10-file-size">1.2 MB</span>
+                                            </div>
+                                        </div>
+                                        <button type="button" class="remove-file-btn" id="marksheet10-remove-btn" aria-label="Remove 10th marksheet">
+                                            <ion-icon name="close-circle"></ion-icon>
+                                        </button>
+                                    </div>
+                                    <span class="error-msg inline-error" id="marksheet10-error">Please upload a valid 10th std marksheet.</span>
                                 </div>
                             </div>
                         </div>

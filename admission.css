@@ -525,14 +525,21 @@ textarea.form-input {
 /* --------------------------------------------------------------------------
    SECTION 3: TOGGLE SAME AS PERMANENT
    -------------------------------------------------------------------------- */
-.toggle-row {
-    display: flex;
+.custom-toggle {
+    position: relative;
+    display: inline-flex;
     align-items: center;
     gap: 12px;
-    margin-bottom: 16px;
+    cursor: pointer;
     padding: 10px 14px;
     background: var(--cobalt-light);
     border-radius: var(--radius-sm);
+    width: fit-content;
+    transition: background-color 0.2s ease;
+}
+
+.custom-toggle:hover {
+    background: rgba(0, 71, 171, 0.08);
 }
 
 .toggle-track {
@@ -1550,6 +1557,31 @@ textarea.form-input {
         font-size: 0.82rem;
         gap: 10px;
     }
+/* Address sub-sections styling */
+.address-sub-section {
+    background: rgba(0, 71, 171, 0.015);
+    border: 1.5px solid rgba(0, 71, 171, 0.08);
+    border-radius: var(--radius-md);
+    padding: 24px;
+    margin-bottom: 24px;
+    transition: var(--transition-fast);
+}
+
+.address-sub-section:hover {
+    background: rgba(0, 71, 171, 0.03);
+    border-color: rgba(0, 71, 171, 0.12);
+}
+
+.address-section-title {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: var(--cobalt-blue);
+    margin-bottom: 20px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid rgba(0, 71, 171, 0.08);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 @media (max-width: 480px) {
