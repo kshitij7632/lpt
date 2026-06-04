@@ -1448,6 +1448,7 @@ textarea.form-input {
         padding: 24px 16px;
         min-height: auto;
         border-radius: var(--radius-lg);
+        scroll-margin-top: 110px;
     }
 
     .form-fields-grid,
@@ -1457,9 +1458,9 @@ textarea.form-input {
     }
 
     .progress-bar-wrapper {
-        position: sticky;
-        top: 100px;
-        z-index: 999;
+        position: relative;
+        top: auto;
+        z-index: 10;
         margin-bottom: 20px;
         border-radius: var(--radius-md);
         padding: 14px 16px;
@@ -1588,10 +1589,11 @@ textarea.form-input {
     .admission-form-card {
         padding: 20px 12px;
         border-radius: var(--radius-md);
+        scroll-margin-top: 90px;
     }
 
     .progress-bar-wrapper {
-        top: 100px;
+        top: auto;
         padding: 10px 12px;
         margin-bottom: 16px;
     }
