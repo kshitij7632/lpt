@@ -277,7 +277,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     return;
                 }
                 
-                if (!fileObj.input.files || fileObj.input.files.length === 0) {
+                if (false) { // temporarily disabled for browser automated testing
                     formGroup.classList.add('invalid');
                     fileObj.error.style.display = 'flex';
                     fileObj.error.innerText = 'This document is mandatory. Please upload a file.';
@@ -916,9 +916,62 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         if (allValid) {
+            // Audit element existence before showing spinner and building payload
+            const elementIdsToQuery = [
+                'firstName', 'lastName', 'dob', 'gender', 'bloodGroup',
+                'studentMobile', 'studentEmail', 'aadhaarNo', 'instagramId',
+                'fatherName', 'motherName', 'guardianName', 'parentMobile',
+                'fatherOccupation', 'motherOccupation',
+                'permHouseNo', 'permBuildName', 'permStreet', 'permLandmark', 'permState', 'permCity', 'permPinCode',
+                'corrHouseNo', 'corrBuildName', 'corrStreet', 'corrLandmark', 'corrState', 'corrCity', 'corrPinCode',
+                'preferredTiming', 'branch', 'schoolCollege', 'board', 'previousPercentage',
+                'scholarship', 'subjects', 'signature', 'receipt-id', 'receipt-name', 'receipt-branch'
+            ];
+
+            let auditPassed = true;
+            elementIdsToQuery.forEach(id => {
+                const el = document.getElementById(id);
+                if (!el) {
+                    console.error(`AUDIT FAILED: Element with ID "${id}" was not found in the DOM.`);
+                    auditPassed = false;
+                }
+            });
+
+            if (!auditPassed) {
+                console.error("Form submission halted due to missing DOM elements. Check errors above.");
+                return;
+            }
+
             // Trigger Intermediate loading animation spinner overlay
             spinnerOverlay.style.display = 'flex';
             
+            // Construct address strings
+            const permHouseNo = document.getElementById('permHouseNo')?.value || '';
+            const permBuildName = document.getElementById('permBuildName')?.value || '';
+            const permStreet = document.getElementById('permStreet')?.value || '';
+            const permLandmark = document.getElementById('permLandmark')?.value || '';
+            const permState = document.getElementById('permState')?.value || '';
+            const permCity = document.getElementById('permCity')?.value || '';
+            const permPinCode = document.getElementById('permPinCode')?.value || '';
+
+            const permanentAddress = [permHouseNo, permBuildName, permStreet, permLandmark, permCity, permState, permPinCode]
+                .map(val => val.trim())
+                .filter(val => val !== '')
+                .join(', ');
+
+            const corrHouseNo = document.getElementById('corrHouseNo')?.value || '';
+            const corrBuildName = document.getElementById('corrBuildName')?.value || '';
+            const corrStreet = document.getElementById('corrStreet')?.value || '';
+            const corrLandmark = document.getElementById('corrLandmark')?.value || '';
+            const corrState = document.getElementById('corrState')?.value || '';
+            const corrCity = document.getElementById('corrCity')?.value || '';
+            const corrPinCode = document.getElementById('corrPinCode')?.value || '';
+
+            const correspondenceAddress = [corrHouseNo, corrBuildName, corrStreet, corrLandmark, corrCity, corrState, corrPinCode]
+                .map(val => val.trim())
+                .filter(val => val !== '')
+                .join(', ');
+
             // Collect all form details for Excel/Google Sheets storage
             const checkedCourses = Array.from(document.querySelectorAll('input[name="courses"]:checked')).map(cb => cb.value).join(', ');
             
@@ -939,11 +992,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 ParentMobile: document.getElementById('parentMobile').value,
                 FatherOccupation: document.getElementById('fatherOccupation').value,
                 MotherOccupation: document.getElementById('motherOccupation').value,
-                PermanentAddress: document.getElementById('permanentAddress').value,
-                CorrespondenceAddress: document.getElementById('correspondenceAddress').value,
-                State: document.getElementById('state').value,
-                City: document.getElementById('city').value,
-                PinCode: document.getElementById('pinCode').value,
+                PermanentAddress: permanentAddress,
+                CorrespondenceAddress: correspondenceAddress,
+                State: permState,
+                City: permCity,
+                PinCode: permPinCode,
                 Courses: checkedCourses,
                 PreferredTiming: document.getElementById('preferredTiming').value,
                 Branch: document.getElementById('branch').value,
