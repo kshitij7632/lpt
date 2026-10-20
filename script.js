@@ -333,3 +333,20 @@ document.addEventListener('DOMContentLoaded', function () {
         // On desktop: Keep download attribute for direct download (default browser behavior)
     });
 });
+
+// ===== FAQ ACCORDION TOGGLE =====
+document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.faq-question').forEach(function (question) {
+        question.addEventListener('click', function () {
+            var item = this.parentElement;
+            // Close all other FAQ items
+            document.querySelectorAll('.faq-item').forEach(function (otherItem) {
+                if (otherItem !== item) {
+                    otherItem.classList.remove('active');
+                }
+            });
+            // Toggle current item
+            item.classList.toggle('active');
+        });
+    });
+});

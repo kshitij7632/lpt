@@ -1,4 +1,48 @@
-﻿User-agent: *
+# Lakshya Private Tuitions — robots.txt
+# https://lakshyaprivatetuition.com
+
+# Allow all legitimate search engine and AI search crawlers
+User-agent: *
 Allow: /
 
+# Google
+User-agent: Googlebot
+Allow: /
+
+# Bing
+User-agent: Bingbot
+Allow: /
+
+# ChatGPT Search (OAI-SearchBot) — allow for ChatGPT Search results
+User-agent: OAI-SearchBot
+Allow: /
+
+# OpenAI training crawler — block training use, keep search access above
+User-agent: GPTBot
+Disallow: /
+
+# Perplexity AI search
+User-agent: PerplexityBot
+Allow: /
+
+# Anthropic Claude web search
+User-agent: ClaudeBot
+Allow: /
+
+# Google AI (Gemini, AI Overviews)
+User-agent: Google-Extended
+Allow: /
+
+# Apple / Siri
+User-agent: Applebot
+Allow: /
+
+# Common AI crawlers — block training, allow search
+User-agent: CCBot
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+# Sitemap
 Sitemap: https://lakshyaprivatetuition.com/sitemap.xml

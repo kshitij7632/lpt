@@ -3101,3 +3101,416 @@ select.form-control {
     color: var(--bright-yellow);
     font-weight: 700;
 }
+
+/* ===== FAQ SECTION ===== */
+.faq-section {
+    background: linear-gradient(180deg, var(--off-white) 0%, #e8edf5 100%);
+}
+.faq-list {
+    max-width: 820px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.faq-item {
+    background: var(--pure-white);
+    border-radius: var(--radius-sm);
+    border: 1px solid rgba(0,71,171,0.08);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition-fast);
+}
+.faq-item:hover {
+    border-color: var(--cobalt-blue);
+    box-shadow: var(--shadow-md);
+}
+.faq-question {
+    padding: 20px 24px;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: var(--dark-blue);
+    cursor: pointer;
+    position: relative;
+    padding-right: 48px;
+    transition: var(--transition-fast);
+}
+.faq-question::after {
+    content: '+';
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: var(--cobalt-blue);
+    transition: var(--transition-fast);
+}
+.faq-item.active .faq-question::after {
+    content: '−';
+    color: var(--bright-yellow);
+}
+.faq-item.active .faq-question {
+    background: var(--dark-blue);
+    color: var(--pure-white);
+}
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 24px;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--text-dark);
+    transition: max-height 0.4s ease, padding 0.3s ease;
+}
+.faq-item.active .faq-answer {
+    max-height: 600px;
+    padding: 16px 24px 24px;
+}
+.faq-answer a {
+    color: var(--cobalt-blue);
+    font-weight: 600;
+}
+.faq-answer strong {
+    color: var(--dark-blue);
+}
+
+/* ===== BREADCRUMB NAVIGATION ===== */
+.breadcrumb-nav {
+    background: rgba(0,43,107,0.95);
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.breadcrumb-nav ol {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 0;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+}
+.breadcrumb-nav li {
+    display: flex;
+    align-items: center;
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.6);
+}
+.breadcrumb-nav li:not(:last-child)::after {
+    content: '›';
+    margin: 0 10px;
+    color: rgba(255,255,255,0.4);
+    font-size: 1rem;
+}
+.breadcrumb-nav a {
+    color: var(--bright-yellow);
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition-fast);
+}
+.breadcrumb-nav a:hover {
+    color: var(--pure-white);
+}
+.breadcrumb-nav li:last-child {
+    color: rgba(255,255,255,0.9);
+    font-weight: 600;
+}
+
+/* ===== LOCAL LANDING PAGE STYLES ===== */
+.local-hero {
+    position: relative;
+    padding: 80px 0 60px;
+    background: linear-gradient(135deg, var(--dark-blue) 0%, var(--cobalt-blue) 50%, var(--electric-blue) 100%);
+    color: var(--pure-white);
+    text-align: center;
+    overflow: hidden;
+}
+.local-hero h1 {
+    font-family: var(--font-heading);
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.local-hero p {
+    font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+    line-height: 1.7;
+    max-width: 650px;
+    margin: 0 auto 30px;
+    color: rgba(255,255,255,0.9);
+}
+.local-cta-buttons {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.local-section {
+    padding: 70px 0;
+}
+.local-section-alt {
+    background: linear-gradient(180deg, var(--off-white), #e8edf5);
+}
+.local-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    margin-top: 30px;
+}
+.local-card {
+    background: var(--pure-white);
+    border-radius: var(--radius-md);
+    padding: 28px;
+    border: 1px solid rgba(0,71,171,0.06);
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition-fast);
+}
+.local-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--cobalt-blue);
+}
+.local-card ion-icon {
+    font-size: 2rem;
+    color: var(--cobalt-blue);
+    margin-bottom: 14px;
+}
+.local-card h3 {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--dark-blue);
+    margin-bottom: 10px;
+}
+.local-card p {
+    font-size: 0.92rem;
+    line-height: 1.7;
+    color: var(--text-gray);
+}
+
+@media (max-width: 768px) {
+    .local-hero {
+        padding: 60px 0 40px;
+    }
+    .local-hero h1 {
+        font-size: 1.6rem;
+    }
+    .local-section {
+        padding: 50px 0;
+    }
+    .local-grid {
+        grid-template-columns: 1fr;
+    }
+    .faq-question {
+        font-size: 0.95rem;
+        padding: 16px 40px 16px 18px;
+    }
+    .breadcrumb-nav {
+        padding: 10px 0;
+    }
+    .breadcrumb-nav li {
+        font-size: 0.78rem;
+    }
+}
+
+/* ===== BRANCHES / LEARNING CENTERS SECTION ===== */
+.branches-overview-section {
+    padding: 80px 0;
+    background: linear-gradient(180deg, #f0f4fa 0%, var(--pure-white) 100%);
+}
+.branches-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    margin-top: 36px;
+}
+.branch-card {
+    background: var(--pure-white);
+    border-radius: var(--radius-lg);
+    border: 2px solid rgba(0, 71, 171, 0.08);
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+    transition: var(--transition-medium);
+    display: flex;
+    flex-direction: column;
+}
+.branch-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-xl);
+    border-color: var(--cobalt-blue);
+}
+.branch-card-header {
+    background: linear-gradient(135deg, var(--dark-blue) 0%, var(--cobalt-blue) 100%);
+    color: var(--pure-white);
+    padding: 26px 24px;
+}
+.branch-card-badge {
+    display: inline-block;
+    background: rgba(255, 215, 0, 0.2);
+    color: var(--bright-yellow);
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+}
+.branch-card-header h3 {
+    font-family: var(--font-heading);
+    font-size: 1.35rem;
+    font-weight: 800;
+    margin-bottom: 6px;
+    color: var(--pure-white);
+}
+.branch-card-header p {
+    font-size: 0.88rem;
+    color: rgba(255, 255, 255, 0.88);
+    margin: 0;
+}
+.branch-card-body {
+    padding: 24px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.branch-info-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 0.92rem;
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+.branch-info-row ion-icon {
+    font-size: 1.25rem;
+    color: var(--cobalt-blue);
+    flex-shrink: 0;
+    margin-top: 3px;
+}
+.branch-courses-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 4px;
+}
+.branch-tag {
+    background: rgba(0, 71, 171, 0.08);
+    color: var(--cobalt-blue);
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: var(--radius-sm);
+}
+.branch-card-footer {
+    padding: 0 24px 24px;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+.branch-card-footer .btn {
+    flex: 1 1 180px;
+    text-align: center;
+    font-size: 0.88rem;
+    padding: 12px 16px;
+}
+
+/* ===== ADVANTAGE / WHY CHOOSE US SECTION ===== */
+.advantage-section {
+    padding: 80px 0;
+    background: var(--pure-white);
+}
+.advantage-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    margin-top: 36px;
+}
+.advantage-card {
+    background: var(--off-white);
+    border-radius: var(--radius-md);
+    padding: 28px 22px;
+    border: 1px solid rgba(0, 71, 171, 0.06);
+    transition: var(--transition-fast);
+    position: relative;
+    overflow: hidden;
+}
+.advantage-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--cobalt-blue);
+    opacity: 0;
+    transition: var(--transition-fast);
+}
+.advantage-card:hover {
+    background: var(--pure-white);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-4px);
+    border-color: rgba(0, 71, 171, 0.15);
+}
+.advantage-card:hover::before {
+    opacity: 1;
+}
+.advantage-icon-box {
+    width: 50px;
+    height: 50px;
+    border-radius: var(--radius-sm);
+    background: linear-gradient(135deg, rgba(0, 71, 171, 0.1), rgba(0, 102, 255, 0.15));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--cobalt-blue);
+    font-size: 1.5rem;
+    margin-bottom: 16px;
+}
+.advantage-card h3 {
+    font-family: var(--font-heading);
+    font-size: 1.12rem;
+    font-weight: 700;
+    color: var(--dark-blue);
+    margin-bottom: 8px;
+}
+.advantage-card p {
+    font-size: 0.9rem;
+    color: var(--text-gray);
+    line-height: 1.65;
+    margin: 0;
+}
+
+/* ===== COURSE BRANCH TAG STYLING ===== */
+.course-branch-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+}
+.course-branch-badge.mulund {
+    background: rgba(0, 71, 171, 0.1);
+    color: var(--cobalt-blue);
+    border: 1px solid rgba(0, 71, 171, 0.2);
+}
+.course-branch-badge.dombivli {
+    background: rgba(220, 53, 69, 0.1);
+    color: var(--dark-red);
+    border: 1px solid rgba(220, 53, 69, 0.2);
+}
+.course-branch-badge.both {
+    background: rgba(40, 167, 69, 0.1);
+    color: #1e7e34;
+    border: 1px solid rgba(40, 167, 69, 0.2);
+}
